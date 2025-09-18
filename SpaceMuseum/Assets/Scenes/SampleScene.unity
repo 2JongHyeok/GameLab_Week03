@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
+  - component: {fileID: 330585549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -530,8 +531,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25340143, y: 0, z: 0, w: 0.9673612}
-  m_LocalPosition: {x: -2.47, y: 3.25, z: -4}
+  m_LocalRotation: {x: 0.15212339, y: 0.0000000043108526, z: -6.6350375e-10, w: 0.98836154}
+  m_LocalPosition: {x: -2.47, y: 4.007058, z: -9.537169}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -613,6 +614,24 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &330585549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2c80859be868c44a1d369a5c9db26d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputController: {fileID: 562486978}
+  vcam: {fileID: 562486982}
+  zoomStepPerNotch: 15
+  zoomSpeed: 15
+  minDistance: 2
+  maxDistance: 15
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +1005,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  OrbitStyle: 1
+  OrbitStyle: 0
   Radius: 10
   Orbits:
     Top:
@@ -1081,8 +1100,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562486977}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2534013, y: 0.000000029716883, z: -0.00000000778437, w: 0.9673613}
-  m_LocalPosition: {x: -2.47, y: 3.25, z: -4}
+  m_LocalRotation: {x: 0.15212339, y: 0.000000004310853, z: -6.6350353e-10, w: 0.98836154}
+  m_LocalPosition: {x: -2.47, y: 4.007058, z: -9.537169}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2106,7 +2125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rotationSpeed: 200
+  sprintSpeed: 10
+  jumpForce: 50
   groundCheck: {fileID: 1923610012}
   groundDistance: 0.2
   groundMask:
