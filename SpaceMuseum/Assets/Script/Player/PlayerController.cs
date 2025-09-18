@@ -1,20 +1,18 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-
     [Header("Movement")]
-    public float moveSpeed = 8f;
-    public float rotationSpeed = 15f;
-    private float jumpForce = 50f; // 점프 힘
+    public float moveSpeed = 6f;      // 걷는 속도
+    public float sprintSpeed = 10f;   // 달리기 속도
+    private float rotationSpeed = 5f;
+    public float jumpForce = 7f;
 
     [Header("Ground Check")]
-    public Transform groundCheck;   // 지면을 확인할 위치 (캐릭터 발밑)
-    public float groundDistance = 0.2f; // 지면 확인 거리
-    public LayerMask groundMask;      // 지면으로 인식할 레이어
+    public Transform groundCheck;
+    public float groundDistance = 0.2f;
+    public LayerMask groundMask;
 
     [Header("World Wrapping")]
     public float worldSizeX = 300f;
@@ -23,69 +21,72 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Vector2 moveInput;
     private Vector3 moveDirection;
-    private bool isGrounded; // 캐릭터가 땅에 닿았는지 여부
-    private bool jumpRequested = false; // 점프 요청 플래그
+    private bool isGrounded;
+    private bool jumpRequested = false;
+    private bool isSprinting = false; // 달리기 상태 변수
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.useGravity = true;
         rb.freezeRotation = true;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     void Update()
     {
-        // 지면 체크: 매 프레임 캐릭터 발밑에 구체를 생성해 땅과 닿는지 확인
+        // --- 기존 로직 ---
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        // 입력 처리
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 
-        // 점프 입력: 땅에 있을 때만 점프 요청을 할 수 있음
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             jumpRequested = true;
         }
+
+        // --- [추가] 달리기 입력 체크 ---
+        // 왼쪽 Shift 키를 누르고 있으면 달리기 상태로 변경
+        isSprinting = Input.GetKey(KeyCode.LeftShift);
     }
 
     void FixedUpdate()
     {
-        // 이동 및 회전 처리 (기존과 동일)
         HandleMovementAndRotation();
 
-        // 점프 처리: 물리 업데이트 주기에서 실제 힘을 가함
         if (jumpRequested)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            jumpRequested = false; // 점프 요청 처리 후 플래그 초기화
+            jumpRequested = false;
         }
 
-        // 월드 래핑 처리 (기존과 동일)
         WrapPosition();
     }
 
     void HandleMovementAndRotation()
     {
+        // --- [수정] 현재 속도를 걷기/달리기 상태에 따라 결정 ---
+        float currentSpeed = isSprinting ? sprintSpeed : moveSpeed;
+
+        // 카메라 기준 이동 방향 계산 (기존과 동일)
         Vector3 camForward = Camera.main.transform.forward;
         Vector3 camRight = Camera.main.transform.right;
-
         camForward.y = 0f;
         camRight.y = 0f;
         camForward.Normalize();
         camRight.Normalize();
-
         moveDirection = (camForward * moveInput.y + camRight * moveInput.x).normalized;
 
-        Vector3 targetVelocity = moveDirection * moveSpeed;
+        // 이동 적용 (수정된 속도 사용)
+        Vector3 targetVelocity = moveDirection * currentSpeed;
         targetVelocity.y = rb.linearVelocity.y;
         rb.linearVelocity = targetVelocity;
 
-        if (camForward.sqrMagnitude > 0.01f)
+
+        // --- [수정] 회전 로직 변경 ---
+        // 이동 방향이 있을 때만(키를 누를 때만) 해당 방향을 바라보도록 회전
+        if (moveDirection.sqrMagnitude > 0.01f)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(camForward, Vector3.up);
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
             Quaternion newRotation = Quaternion.Slerp(rb.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
             rb.MoveRotation(newRotation);
         }
