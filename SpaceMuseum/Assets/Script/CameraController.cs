@@ -1,18 +1,26 @@
-using UnityEngine;
+using System.Runtime.InteropServices;
 using Unity.Cinemachine;
+using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    #region 카메라 회전시 마우스 위치 관련 변수
+    [DllImport("user32.dll")]
+    private static extern bool SetCursorPos(int X, int Y);
+    private Vector3 savedMousePosition;
+    #endregion
+    [Header("Refs")]
     public CinemachineInputAxisController inputController;
     public CinemachineCamera vcam;
 
+    #region 카메라 휠 확대 축소 관련 변수
     [Header("등속 줌 설정")]
     [SerializeField] float zoomStepPerNotch = 1.0f; // 휠 한 칸당 목표값 변화량(거리/스케일)
     [SerializeField] float zoomSpeed = 6.0f;        // 등속 이동 속도(초당 단위)
     [SerializeField] float minDistance = 1.5f;      // Sphere 모드용
     [SerializeField] float maxDistance = 12f;       // Sphere 모드용
-
-    float _target; // Sphere: Radius, ThreeRing: RadialAxis.Value
+    float _target;
+    #endregion
 
     void Start()
     {
@@ -26,19 +34,7 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        // 우클릭 회전 ON/OFF (네 기존 로직 유지)
-        if (Input.GetMouseButton(1))
-        {
-            if (inputController) inputController.enabled = true;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-        else
-        {
-            if (inputController) inputController.enabled = false;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        RotateCamera();
 
         if (!vcam || !vcam.TryGetComponent<CinemachineOrbitalFollow>(out var of)) return;
 
@@ -69,6 +65,27 @@ public class CameraController : MonoBehaviour
             float next = Mathf.MoveTowards(axis.Value, _target, zoomSpeed * Time.deltaTime);
             axis.Value = Mathf.Clamp(next, axis.Range.x, axis.Range.y);
             of.RadialAxis = axis;                   // 다시 적﻿용(중요)
+        }
+    }
+    void RotateCamera()    // 카메라 회전 시키는 부분
+    {
+        // 우클릭 회전 ON/OFF
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (inputController) inputController.enabled = true;
+            savedMousePosition = Input.mousePosition;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            Debug.Log("마우스 땜");
+            if (inputController) inputController.enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            // 마우스를 원래 위치로 되돌리는 부분.
+            int y = Screen.height - (int)savedMousePosition.y;
+            SetCursorPos((int)savedMousePosition.x, (int)savedMousePosition.y);
         }
     }
 }
