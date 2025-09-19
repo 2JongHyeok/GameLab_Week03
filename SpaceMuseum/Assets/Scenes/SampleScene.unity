@@ -531,8 +531,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15212339, y: 0.0000000043108526, z: -6.6350375e-10, w: 0.98836154}
-  m_LocalPosition: {x: -2.47, y: 4.007058, z: -9.537169}
+  m_LocalRotation: {x: 0.1521234, y: 0.000000030362006, z: -0.000000004673161, w: 0.98836154}
+  m_LocalPosition: {x: -2.47, y: 2.503529, z: -4.7685847}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -875,6 +875,7 @@ GameObject:
   - component: {fileID: 562486980}
   - component: {fileID: 562486979}
   - component: {fileID: 562486978}
+  - component: {fileID: 562486984}
   m_Layer: 0
   m_Name: CM FreeLock1
   m_TagString: Untagged
@@ -1006,7 +1007,7 @@ MonoBehaviour:
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
   OrbitStyle: 0
-  Radius: 10
+  Radius: 5
   Orbits:
     Top:
       Radius: 2
@@ -1100,13 +1101,52 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562486977}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15212339, y: 0.000000004310853, z: -6.6350353e-10, w: 0.98836154}
-  m_LocalPosition: {x: -2.47, y: 4.007058, z: -9.537169}
+  m_LocalRotation: {x: 0.1521234, y: 0.000000030362006, z: -0.00000000467316, w: 0.98836154}
+  m_LocalPosition: {x: -2.47, y: 2.503529, z: -4.7685847}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 8, y: 0, z: 0}
+--- !u!114 &562486984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562486977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe43d662878a7c43bcd44d43c9e2094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 192
+  IgnoreTag: 
+  TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  MinimumDistanceFromTarget: 0.3
+  AvoidObstacles:
+    Enabled: 1
+    DistanceLimit: 0
+    MinimumOcclusionTime: 0
+    CameraRadius: 0.4
+    UseFollowTarget:
+      Enabled: 0
+      YOffset: 0
+    Strategy: 0
+    MaximumEffort: 4
+    SmoothingTime: 0
+    Damping: 0.4
+    DampingWhenOccluded: 0.2
+  ShotQualityEvaluation:
+    Enabled: 0
+    OptimalDistance: 10
+    NearLimit: 5
+    FarLimit: 30
+    MaxQualityBoost: 0.2
 --- !u!1 &752862865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,7 +1788,7 @@ GameObject:
   - component: {fileID: 1529490280}
   - component: {fileID: 1529490279}
   - component: {fileID: 1529490278}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
