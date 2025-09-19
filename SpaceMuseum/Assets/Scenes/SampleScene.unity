@@ -630,7 +630,7 @@ MonoBehaviour:
   vcam: {fileID: 562486982}
   zoomStepPerNotch: 15
   zoomSpeed: 15
-  minDistance: 2
+  minDistance: 5
   maxDistance: 15
 --- !u!1 &410087039
 GameObject:
