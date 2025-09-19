@@ -30,6 +30,8 @@ public class CameraController : MonoBehaviour
                 ? of.Radius
                 : of.RadialAxis.Value;
         }
+        if (inputController) inputController.enabled = false;
+
     }
 
     void LateUpdate()
