@@ -117,7 +117,7 @@ public class PlayerOxygen : MonoBehaviour
             if (!oxygenLinkLine.gameObject.activeSelf)
                 oxygenLinkLine.gameObject.SetActive(true);
 
-            Vector3 startPos = transform.position + Vector3.up * lineAttachHeight;
+            Vector3 startPos = transform.position;
             Vector3 endPos = source.position + Vector3.up * lineAttachHeight;
             DrawSaggingLine(oxygenLinkLine, startPos, endPos);
         }
