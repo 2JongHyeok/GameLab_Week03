@@ -4,7 +4,6 @@ public class PlayerTetherController : MonoBehaviour
 {
     [Header("Tether Settings")]
     public GameObject tetherPrefab;
-    public int tetherCount = 10;
 
     void Update()
     {
@@ -22,27 +21,26 @@ public class PlayerTetherController : MonoBehaviour
             return;
         }
 
-        if (tetherCount <= 0)
+        if (InGameManager.Instance.tetherCount > 0)
         {
-            Debug.Log("테더가 부족합니다!");
-            return;
+            // 2. InGameManager의 테더 개수를 1 감소시킵니다.
+            InGameManager.Instance.tetherCount--;
+
+            // 3. 변경된 개수를 UIManager에 알려줍니다.
+            MyUIManager.Instance.UpdateTetherCount(InGameManager.Instance.tetherCount);
+
+            Vector3 spawnPosition = transform.position;
+            spawnPosition.y = 0f;
+
+            var go = Instantiate(tetherPrefab, spawnPosition, Quaternion.identity);
+
+            // ★ 핵심: 즉시 연결을 구축하고 그 다음 네트워크 갱신
+            if (go.TryGetComponent<Tether>(out var tether))
+            {
+                tether.BuildConnections(); // Start() 기다리지 않음
+            }
+
+            OxygenNetworkManager.Instance.UpdateOxygenNetwork();
         }
-
-        tetherCount--;
-
-        Vector3 spawnPosition = transform.position;
-        spawnPosition.y = 0f;
-
-        var go = Instantiate(tetherPrefab, spawnPosition, Quaternion.identity);
-
-        // ★ 핵심: 즉시 연결을 구축하고 그 다음 네트워크 갱신
-        if (go.TryGetComponent<Tether>(out var tether))
-        {
-            tether.BuildConnections(); // Start() 기다리지 않음
-        }
-
-        OxygenNetworkManager.Instance?.UpdateOxygenNetwork();
-
-        Debug.Log($"테더 설치 완료! 남은 개수: {tetherCount}");
     }
 }
