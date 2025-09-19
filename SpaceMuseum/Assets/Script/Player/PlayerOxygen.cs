@@ -45,8 +45,6 @@ public class PlayerOxygen : MonoBehaviour
         // (옵션) 상태 변화시에만 로그
         if (prevReceivingOxygenState != isReceivingOxygen)
         {
-            if (isReceivingOxygen) Debug.Log("산소 공급 시작 (근원 확보)");
-            else Debug.Log("산소 공급 중단 (근원 상실)");
             prevReceivingOxygenState = isReceivingOxygen;
         }
     }
