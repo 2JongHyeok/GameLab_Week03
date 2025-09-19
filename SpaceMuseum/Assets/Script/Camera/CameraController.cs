@@ -87,12 +87,8 @@ public class CameraController : MonoBehaviour
         }
         else if (Input.GetMouseButtonUp(1))
         {
-            Debug.Log("마우스 땜");
             if (inputController) inputController.enabled = false;
             Cursor.lockState = CursorLockMode.None;
-            // 2) 같은 프레임에 바로 SetCursorPos 하면 종종 OS가
-            //    "잠금 해제 복구"를 먼저 적용해 오차가 난다.
-            //    → 다음 프레임에 복구.
             StartCoroutine(RestoreNextFrame());
         }
     }
