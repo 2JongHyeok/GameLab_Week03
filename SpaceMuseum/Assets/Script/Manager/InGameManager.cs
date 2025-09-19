@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class InGameManager : MonoBehaviour
@@ -24,12 +25,9 @@ public class InGameManager : MonoBehaviour
     public int nowWeight = 0;
     public int maxWeight = 0;
 
-    [Header("광물 데이터 (나중을 위해)")]
-    public int mineral_A_count = 0;
-    public int mineral_B_count = 0;
-    public int mineral_C_count = 0;
-    public int mineral_D_count = 0;
-    public int mineral_E_count = 0;
+    [Header("도감 데이터")]
+    // Dictionary를 사용해 자원 이름과 수집률(%)을 저장합니다.
+    public Dictionary<string, int> collectionProgress = new Dictionary<string, int>();
 
     private void Awake()
     {
