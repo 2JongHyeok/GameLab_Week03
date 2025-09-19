@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Runtime.InteropServices;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -5,9 +6,14 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     #region 카메라 회전시 마우스 위치 관련 변수
-    [DllImport("user32.dll")]
-    private static extern bool SetCursorPos(int X, int Y);
-    private Vector3 savedMousePosition;
+
+    [DllImport("user32.dll")] static extern bool GetCursorPos(out POINT lpPoint);
+    [DllImport("user32.dll")] static extern bool SetCursorPos(int X, int Y);
+
+    [StructLayout(LayoutKind.Sequential)]
+    struct POINT { public int x; public int y; }
+
+    POINT savedScreenPos;
     #endregion
     [Header("Refs")]
     public CinemachineInputAxisController inputController;
@@ -31,7 +37,6 @@ public class CameraController : MonoBehaviour
                 : of.RadialAxis.Value;
         }
         if (inputController) inputController.enabled = false;
-
     }
 
     void LateUpdate()
@@ -75,7 +80,8 @@ public class CameraController : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             if (inputController) inputController.enabled = true;
-            savedMousePosition = Input.mousePosition;
+            // 1) 현재 커서의 '데스크톱(스크린) 좌표'를 저장
+            GetCursorPos(out savedScreenPos);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
@@ -84,10 +90,16 @@ public class CameraController : MonoBehaviour
             Debug.Log("마우스 땜");
             if (inputController) inputController.enabled = false;
             Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            // 마우스를 원래 위치로 되돌리는 부분.
-            int y = Screen.height - (int)savedMousePosition.y;
-            SetCursorPos((int)savedMousePosition.x, (int)savedMousePosition.y);
+            // 2) 같은 프레임에 바로 SetCursorPos 하면 종종 OS가
+            //    "잠금 해제 복구"를 먼저 적용해 오차가 난다.
+            //    → 다음 프레임에 복구.
+            StartCoroutine(RestoreNextFrame());
         }
+    }
+    IEnumerator RestoreNextFrame()
+    {
+        yield return null; // 1프레임 대기(필요하면 2프레임도 OK)
+        SetCursorPos(savedScreenPos.x, savedScreenPos.y);
+        Cursor.visible = true;
     }
 }
