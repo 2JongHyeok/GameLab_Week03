@@ -14,6 +14,7 @@ public class PlayerOxygen : MonoBehaviour
     public float gaugeMaxWidth = 1f;
     public LineRenderer oxygenLinkLine;
     public float lineAttachHeight = 1f;
+    public Transform oxygenBackfillPivot;
 
     // 성능/안정성 개선: HashSet + 자식 Collider 허용
     private readonly HashSet<Collider> nearbyOxygenSources = new HashSet<Collider>();
@@ -151,5 +152,12 @@ public class PlayerOxygen : MonoBehaviour
         float ratio = Mathf.Clamp01(maxOxygen > 0f ? currentOxygen / maxOxygen : 0f);
         var ls = oxygenGaugePivot.localScale;
         oxygenGaugePivot.localScale = new Vector3(gaugeMaxWidth * ratio, ls.y, ls.z);
+
+        // 2) 보조 게이지: “반대로”
+        if (oxygenBackfillPivot)
+        {
+            var bls = oxygenBackfillPivot.localScale;
+            oxygenBackfillPivot.localScale = new Vector3(gaugeMaxWidth * (1f - ratio), bls.y, bls.z);
+        }
     }
 }
