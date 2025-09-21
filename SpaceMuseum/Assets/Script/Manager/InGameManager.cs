@@ -22,8 +22,8 @@ public class InGameManager : MonoBehaviour
     [Header("가방 데이터")]
     public int inventoryCapacityLevel = 1;
     public int inventoryCapacityUpgradePrice = 500; // 초기 가격
-    public int nowWeight = 0;
-    public int maxWeight = 0;
+    public int currentWeight = 0;
+    public int maxWeight = 10;
 
     [Header("도감 데이터")]
     // Dictionary를 사용해 자원 이름과 수집률(%)을 저장합니다.
@@ -40,6 +40,19 @@ public class InGameManager : MonoBehaviour
             Instance = this;
         }
     }
+
+    public void UpdateWeight()
+    {
+        MyUIManager.Instance.UpdateWeightUI(currentWeight, maxWeight);
+
+        // 플레이어 이동속도 패널티 적용
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            player.GetComponent<PlayerController>()?.ApplyWeightPenalty(currentWeight, maxWeight);
+        }
+    }
+
 
     private void Start()
     {

@@ -8,13 +8,14 @@ public class MineralBox : MonoBehaviour, IInteractable
     public GameObject mineralPrefab;
     public List<MineralData> mineralDropTable;
     public GameObject interactionPromptPrefab; // 월드 스페이스 UI 프리팹
+    private PlayerInteraction currentPlayerInteraction; // 플레이어 상호작용 스크립트 저장
 
     private GameObject promptInstance;
     private Slider interactionSlider; // 월드 UI에 있는 슬라이더
     private bool isOpened = false;    // 박스가 중복 열리지 않도록 방지
 
     // OnInteract는 이제 플레이어로부터 진행률을 받아 슬라이더를 업데이트합니다.
-    public void OnInteract(float progress)
+    public void OnHoldInteract(float progress)
     {
         if (interactionSlider != null)
         {
@@ -26,6 +27,7 @@ public class MineralBox : MonoBehaviour, IInteractable
             Open();
         }
     }
+    public void OnInstantInteract() { }
 
     public void Open()
     {
@@ -34,12 +36,13 @@ public class MineralBox : MonoBehaviour, IInteractable
 
         SpawnRandomMineral();
 
+        currentPlayerInteraction?.ClearInteractable(this);
+
         // UI 정리
         if (promptInstance != null)
         {
             Destroy(promptInstance);
         }
-
         // TreasureBox 파괴
         Destroy(gameObject);
     }
@@ -48,6 +51,7 @@ public class MineralBox : MonoBehaviour, IInteractable
     {
         if (other.CompareTag("Player"))
         {
+            currentPlayerInteraction = other.GetComponent<PlayerInteraction>();
             other.GetComponent<PlayerInteraction>()?.SetInteractable(this);
 
             if (interactionPromptPrefab != null && promptInstance == null)

@@ -152,6 +152,7 @@ public class MyUIManager : MonoBehaviour
             gm.inventoryCapacityLevel++;
             gm.maxWeight += 10;
             gm.inventoryCapacityUpgradePrice += 500; // 가격 500원 증가
+            gm.UpdateWeight();
             UpdateAllUI();
         }
     }
@@ -163,6 +164,7 @@ public class MyUIManager : MonoBehaviour
 
     public void UpdateWeightUI(int now, int max)
     {
+        Debug.Log(max);
         if (InventoryUIText != null)
             InventoryUIText.text = $"Weight : {now} / {max}";
     }
@@ -174,7 +176,7 @@ public class MyUIManager : MonoBehaviour
         UpdateTetherCount(gm.tetherCount);
         UpdateBytes(gm.bytes);
         UpdateShopButtons();
-        UpdateWeightUI(gm.nowWeight, gm.maxWeight);
+        UpdateWeightUI(gm.currentWeight, gm.maxWeight);
     }
     public void UpdateTetherCount(int count)
     {

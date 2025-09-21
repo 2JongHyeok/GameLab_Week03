@@ -12,14 +12,16 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (currentInteractable != null)
         {
-            // F를 누르고 있으면 게이지 채움
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                currentInteractable.OnInstantInteract();
+            }
+            else if (Input.GetKey(KeyCode.F))
             {
                 currentHoldTime += Time.deltaTime;
                 float progress = Mathf.Clamp01(currentHoldTime / interactionHoldTime);
-                currentInteractable.OnInteract(progress);
+                currentInteractable.OnHoldInteract(progress);
             }
-            // F를 떼면 무조건 리셋
             else if (Input.GetKeyUp(KeyCode.F))
             {
                 ResetInteraction();
@@ -31,8 +33,8 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (currentInteractable != newInteractable)
         {
-            currentInteractable = newInteractable;
             ResetInteraction(); // 새 대상이면 무조건 진행률 초기화
+            currentInteractable = newInteractable;
         }
     }
 
@@ -48,6 +50,6 @@ public class PlayerInteraction : MonoBehaviour
     private void ResetInteraction()
     {
         currentHoldTime = 0f;
-        currentInteractable?.OnInteract(0f); // UI도 0으로
+        currentInteractable?.OnHoldInteract(0f); // UI도 0으로
     }
 }

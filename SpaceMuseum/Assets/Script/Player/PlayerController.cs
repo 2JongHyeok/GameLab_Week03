@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float sprintSpeed = 10f;   // 달리기 속도
     private float rotationSpeed = 5f;
     public float jumpForce = 7f;
+    private float originalMoveSpeed;
+    private float currentSpeedMultiplier = 1f;
 
     [Header("Ground Check")]
     public Transform groundCheck;
@@ -30,6 +32,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.useGravity = true;
         rb.freezeRotation = true;
+        originalMoveSpeed = moveSpeed;
     }
 
     void Update()
@@ -61,11 +64,30 @@ public class PlayerController : MonoBehaviour
 
         WrapPosition();
     }
+    public void ApplyWeightPenalty(float currentWeight, float maxWeight)
+    {
+        if (currentWeight <= maxWeight)
+        {
+            currentSpeedMultiplier = 1f; // 최대 무게 이하면 정상 속도
+            return;
+        }
 
+        float overloadRatio = (currentWeight - maxWeight) / maxWeight;
+
+        if (overloadRatio <= 0.51f) // 1% ~ 49% 초과
+        {
+            currentSpeedMultiplier = 0.5f; // 이동속도 50% 감소
+        }
+        else // 50% 이상 초과
+        {
+            currentSpeedMultiplier = 0.1f; // 이동속도 90% 감소
+        }
+    }
     void HandleMovementAndRotation()
     {
         // --- [수정] 현재 속도를 걷기/달리기 상태에 따라 결정 ---
-        float currentSpeed = isSprinting ? sprintSpeed : moveSpeed;
+        float baseSpeed = isSprinting ? sprintSpeed : moveSpeed;
+        float currentSpeed = baseSpeed * currentSpeedMultiplier;
 
         // 카메라 기준 이동 방향 계산 (기존과 동일)
         Vector3 camForward = Camera.main.transform.forward;
