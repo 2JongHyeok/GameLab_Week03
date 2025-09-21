@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "New Mineral Data", menuName = "Game/Mineral Data")]
 public class MineralData : ScriptableObject
@@ -11,4 +12,5 @@ public class MineralData : ScriptableObject
     public int weight;            // 자원의 무게
     public int price;               // 자원의 판매 가격
     public float spawnProbability;  // 상자에서 등장할 확률 (가중치)
+    public Sprite mineralIcon;
 }

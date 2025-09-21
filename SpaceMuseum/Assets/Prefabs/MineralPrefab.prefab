@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6810149627264969683}
   m_Layer: 3
   m_Name: MineralPrefab
-  m_TagString: Untagged
+  m_TagString: Mineral
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 0}
   interactionPromptPrefab: {fileID: 0}
+  isDonated: 0
 --- !u!54 &5015289561878070788
 Rigidbody:
   m_ObjectHideFlags: 0

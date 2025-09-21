@@ -7,15 +7,20 @@ public class MyUIManager : MonoBehaviour
     // UIManager를 어디서든 쉽게 접근할 수 있도록 Singleton 패턴으로 만듭니다.
     public static MyUIManager Instance { get; private set; }
 
-    [Header("게임 상태 UI")]
+    [Header("GameStatus UI")]
     public TextMeshProUGUI tetherCountText; // 에디터에서 연결할 텍스트 UI
     public TextMeshProUGUI byteText;
 
-    [Header("상점 UI")]
+    [Header("Shop UI")]
     public GameObject shopPanel; // 상점 패널 오브젝트
 
-    [Header("상점 버튼들")]
+    [Header("Shop Buttons")]
     public Button buyTetherButton;
+
+    [Header("Donates UI")]
+    public Button collectionBtn;
+    public GameObject collectionPanel; // 도감 전체를 담는 패널
+    public GameObject[] stagePages; // Stage1, Stage2, Stage3 페이지 UI들을 담을 배열
 
     public Button upgradeMoveSpeedButton;
     public TextMeshProUGUI upgradeMoveSpeedPriceText;
@@ -45,6 +50,10 @@ public class MyUIManager : MonoBehaviour
         {
             shopPanel.SetActive(false);
         }
+        if (collectionPanel != null)
+        {
+            collectionPanel.SetActive(false);
+        }
         UpdateAllUI();
     }
 
@@ -53,7 +62,86 @@ public class MyUIManager : MonoBehaviour
         // 'P' 키를 누르면 상점 UI를 켜고 끔
         if (Input.GetKeyDown(KeyCode.P))
         {
+            if (collectionPanel != null && collectionPanel.activeSelf)
+            {
+                CloseCollectionPanel();
+            }
             ToggleShop();
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            // 상점이 열려있으면 상점을 닫고
+            if (shopPanel != null && shopPanel.activeSelf)
+            {
+                CloseShopPanel();
+            }
+            // (상점은 닫혀있고) 도감이 열려있으면 도감을 닫는다
+            else if (collectionPanel != null && collectionPanel.activeSelf)
+            {
+                CloseCollectionPanel();
+            }
+        }
+    }
+
+    public void OpenCollectionPanel()
+    {
+        if (collectionPanel != null)
+        {
+            collectionPanel.SetActive(true);
+            // 도감을 열면 기본으로 첫 번째 스테이지를 보여줌
+            OnStageTabClicked(0);
+            UpdateCollectionDisplay();
+        }
+    }
+
+    public void UpdateCollectionDisplay()
+    {
+        // 모든 페이지 오브젝트를 순회
+        foreach (var pageObject in stagePages)
+        {
+            // 현재 켜져있는 페이지만 찾아서
+            if (pageObject.activeSelf)
+            {
+                // 해당 페이지의 CollectionPage 스크립트에게 UI 업데이트를 명령
+                pageObject.GetComponent<CollectionPage>()?.UpdatePageDisplay();
+                // 하나 찾았으면 루프 종료
+                break;
+            }
+        }
+    }
+
+    public void OnStageTabClicked(int stageIndex)
+    {
+        if (stagePages == null || stagePages.Length <= stageIndex) return;
+        collectionBtn.gameObject.SetActive(false);
+
+        // 모든 페이지를 일단 다 끈다
+        for (int i = 0; i < stagePages.Length; i++)
+        {
+            stagePages[i].SetActive(false);
+        }
+
+        // 요청된 인덱스의 페이지만 켠다
+        stagePages[stageIndex].SetActive(true);
+
+        CollectionPage collectionPage = stagePages[stageIndex].GetComponent<CollectionPage>();
+        if (collectionPage != null)
+        {
+            // 1. 페이지를 초기화하여 슬롯들을 생성한다 (아직 생성 안 됐을 경우에만 실행됨)
+            collectionPage.InitializePage();
+
+            // 2. 생성된 슬롯들의 내용을 최신 데이터로 업데이트한다
+            collectionPage.UpdatePageDisplay();
+        }
+    }
+
+    // 도감 닫기 (X 버튼 또는 ESC키로 호출)
+    public void CloseCollectionPanel()
+    {
+        if (collectionPanel != null)
+        {
+            collectionPanel.SetActive(false);
+            collectionBtn.gameObject.SetActive(true);
         }
     }
 
@@ -69,6 +157,13 @@ public class MyUIManager : MonoBehaviour
         {
             UpdateShopButtons();
         }
+    }
+
+    public void CloseShopPanel()
+    {
+        if (shopPanel == null) return;
+
+        shopPanel.SetActive(false);
     }
 
     public void UpdateShopButtons()
@@ -165,7 +260,6 @@ public class MyUIManager : MonoBehaviour
 
     public void UpdateWeightUI(int now, int max)
     {
-        Debug.Log(max);
         if (InventoryUIText != null)
             InventoryUIText.text = $"Weight : {now} / {max}";
     }

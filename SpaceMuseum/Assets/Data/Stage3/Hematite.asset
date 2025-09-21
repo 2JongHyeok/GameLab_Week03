@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cee34e48413b9184f8cf52191b748f3a, type: 3}
-  m_Name: Mineral_C
+  m_Name: Hematite
   m_EditorClassIdentifier: 
-  mineralName: Compound
-  mineralMaterial: {fileID: 2100000, guid: fc19ff208d94ea7459e96cc675ebfbc4, type: 2}
-  weight: 20
-  price: 120
-  spawnProbability: 20
+  mineralName: Hematite
+  mineralMaterial: {fileID: 2100000, guid: df32c5f9e16114f4cbfd23a70f4405d0, type: 2}
+  weight: 60
+  price: 2500
+  spawnProbability: 25
+  mineralIcon: {fileID: 21300000, guid: 8a23fbf0d2614c5448e9eeda16de2628, type: 3}

@@ -9,12 +9,10 @@ public class SellZone : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Mineral mineral = collision.gameObject.GetComponent<Mineral>();
+        // 태그 확인으로 필터링
+        if (!collision.gameObject.CompareTag("Mineral")) return;
 
-        // Mineral 컴포넌트가 있다면 (즉, 미네랄이 닿았다면)
-        if (mineral != null)
-        {
-            // 미네랄 데이터에서 가격 정보를 가져옵니다.
+        if (collision.gameObject.TryGetComponent<Mineral>(out var mineral)) { 
             int price = mineral.data.price;
 
             // GameManager에 돈을 추가해달라고 요청합니다.

@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cee34e48413b9184f8cf52191b748f3a, type: 3}
-  m_Name: Mineral_D
+  m_Name: Copper
   m_EditorClassIdentifier: 
-  mineralName: Quartz
-  mineralMaterial: {fileID: 2100000, guid: e97ff3dcd6dfda646bf0f101ccad1db5, type: 2}
-  weight: 25
-  price: 180
-  spawnProbability: 15
+  mineralName: Copper
+  mineralMaterial: {fileID: 2100000, guid: 7bb2586bf65cc0c4bbf85ef1254d5f77, type: 2}
+  weight: 30
+  price: 10000
+  spawnProbability: 0.1
+  mineralIcon: {fileID: 21300000, guid: 0c300cb056ab70942a5061e67c17118f, type: 3}

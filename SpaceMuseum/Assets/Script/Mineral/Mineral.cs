@@ -11,6 +11,7 @@ public class Mineral : MonoBehaviour, IInteractable
     private GameObject promptInstance;
     private bool isCarried = false;
     private PlayerCarrier playerCarrier; // 캐싱된 플레이어 캐리어 참조
+    public bool isDonated = false;
 
     #region UI
     public void ShowPrompt(bool show)

@@ -42,6 +42,12 @@ public class InGameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        MyUIManager.Instance.UpdateTetherCount(tetherCount);
+        MyUIManager.Instance.UpdateBytes();
+    }
+
     public void UpdateWeight()
     {
         MyUIManager.Instance.UpdateWeightUI(currentWeight, maxWeight);
@@ -61,9 +67,33 @@ public class InGameManager : MonoBehaviour
     }
 
 
-    private void Start()
+
+    public bool DonateMineral(MineralData mineralData)
     {
-        MyUIManager.Instance.UpdateTetherCount(tetherCount);
-        MyUIManager.Instance.UpdateBytes();
+        string mineralName = mineralData.mineralName;
+        int progressToAdd = 20; // 1개당 20%씩 진행도 증가
+
+        // 이미 등록된 경우
+        if (collectionProgress.ContainsKey(mineralName))
+        {
+            if (collectionProgress[mineralName] >= 100)
+            {
+                Debug.Log($"{mineralName} 은(는) 이미 100% 완료되어 기부할 수 없습니다.");
+                return false;
+            }
+
+            collectionProgress[mineralName] += progressToAdd;
+            if (collectionProgress[mineralName] > 100)
+                collectionProgress[mineralName] = 100;
+        }
+        else
+        {
+            collectionProgress.Add(mineralName, progressToAdd);
+        }
+
+        Debug.Log($"{mineralName} 기부 완료! 현재 진행도: {collectionProgress[mineralName]}%");
+        MyUIManager.Instance.UpdateCollectionDisplay();
+
+        return true; // 기부 성공
     }
 }

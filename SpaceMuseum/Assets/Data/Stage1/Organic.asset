@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee34e48413b9184f8cf52191b748f3a, type: 3}
+  m_Name: Organic
+  m_EditorClassIdentifier: 
+  mineralName: Organic
+  mineralMaterial: {fileID: 2100000, guid: d5f22f5973a08ce4599075750192354c, type: 2}
+  weight: 15
+  price: 80
+  spawnProbability: 25
+  mineralIcon: {fileID: 21300000, guid: e9fe726518e047c4985586b4f40eea0c, type: 3}

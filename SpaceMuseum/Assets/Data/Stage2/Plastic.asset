@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cee34e48413b9184f8cf52191b748f3a, type: 3}
-  m_Name: Mineral_E
+  m_Name: Plastic
   m_EditorClassIdentifier: 
-  mineralName: Titanite
-  mineralMaterial: {fileID: 2100000, guid: bde0f9e2d76d46a438b473a64794069b, type: 2}
-  weight: 30
-  price: 250
-  spawnProbability: 9.9999
+  mineralName: Plastic
+  mineralMaterial: {fileID: 2100000, guid: 99345b03ca4abdc4c84c7bba909ccf51, type: 2}
+  weight: 35
+  price: 900
+  spawnProbability: 25
+  mineralIcon: {fileID: 21300000, guid: 3627d299a2baf2b4997d6deeb5703819, type: 3}
