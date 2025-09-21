@@ -62,7 +62,6 @@ public class PlayerController : MonoBehaviour
             jumpRequested = false;
         }
 
-        WrapPosition();
     }
     public void ApplyWeightPenalty(float currentWeight, float maxWeight)
     {
@@ -112,20 +111,5 @@ public class PlayerController : MonoBehaviour
             Quaternion newRotation = Quaternion.Slerp(rb.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
             rb.MoveRotation(newRotation);
         }
-    }
-
-    void WrapPosition()
-    {
-        Vector3 currentPosition = rb.position;
-        float worldWidth = worldSizeX * 2;
-        float worldDepth = worldSizeZ * 2;
-
-        if (currentPosition.x > worldSizeX) currentPosition.x -= worldWidth;
-        else if (currentPosition.x < -worldSizeX) currentPosition.x += worldWidth;
-
-        if (currentPosition.z > worldSizeZ) currentPosition.z -= worldDepth;
-        else if (currentPosition.z < -worldSizeZ) currentPosition.z += worldDepth;
-
-        rb.position = currentPosition;
     }
 }
