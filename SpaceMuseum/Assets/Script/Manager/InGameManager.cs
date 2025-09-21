@@ -54,10 +54,16 @@ public class InGameManager : MonoBehaviour
         }
     }
 
+    public void AddBytes(int amount)
+    {
+        bytes += amount;
+        MyUIManager.Instance.UpdateBytes();
+    }
+
 
     private void Start()
     {
         MyUIManager.Instance.UpdateTetherCount(tetherCount);
-        MyUIManager.Instance.UpdateBytes(bytes);
+        MyUIManager.Instance.UpdateBytes();
     }
 }

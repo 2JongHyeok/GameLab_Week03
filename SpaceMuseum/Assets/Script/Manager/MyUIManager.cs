@@ -157,10 +157,10 @@ public class MyUIManager : MonoBehaviour
             UpdateAllUI();
         }
     }
-    public void UpdateBytes(int amount)
+    public void UpdateBytes()
     {
         if (byteText != null)
-            byteText.text = $"Byte : {amount}";
+            byteText.text = $"Byte : {InGameManager.Instance.bytes}";
     }
 
     public void UpdateWeightUI(int now, int max)
@@ -175,7 +175,7 @@ public class MyUIManager : MonoBehaviour
     {
         InGameManager gm = InGameManager.Instance;
         UpdateTetherCount(gm.tetherCount);
-        UpdateBytes(gm.bytes);
+        UpdateBytes();
         UpdateShopButtons();
         UpdateWeightUI(gm.currentWeight, gm.maxWeight);
     }

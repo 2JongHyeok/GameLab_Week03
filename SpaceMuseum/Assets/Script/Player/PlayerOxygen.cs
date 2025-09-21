@@ -148,14 +148,36 @@ public class PlayerOxygen : MonoBehaviour
     {
         if (!oxygenGaugePivot) return;
         float ratio = Mathf.Clamp01(maxOxygen > 0f ? currentOxygen / maxOxygen : 0f);
-        var ls = oxygenGaugePivot.localScale;
-        oxygenGaugePivot.localScale = new Vector3(gaugeMaxWidth * ratio, ls.y, ls.z);
+        if (ratio <= 0f)
+        {
+            oxygenGaugePivot.gameObject.SetActive(false);
+        }
+        else
+        {
+            if (!oxygenGaugePivot.gameObject.activeSelf)
+                oxygenGaugePivot.gameObject.SetActive(true);
+
+            var ls = oxygenGaugePivot.localScale;
+            oxygenGaugePivot.localScale = new Vector3(gaugeMaxWidth * ratio, ls.y, ls.z);
+        }
 
         // 2) 보조 게이지: “반대로”
         if (oxygenBackfillPivot)
         {
-            var bls = oxygenBackfillPivot.localScale;
-            oxygenBackfillPivot.localScale = new Vector3(gaugeMaxWidth * (1f - ratio), bls.y, bls.z);
+            float backRatio = 1f - ratio;
+
+            if (backRatio <= 0f)
+            {
+                oxygenBackfillPivot.gameObject.SetActive(false);
+            }
+            else
+            {
+                if (!oxygenBackfillPivot.gameObject.activeSelf)
+                    oxygenBackfillPivot.gameObject.SetActive(true);
+
+                var bls = oxygenBackfillPivot.localScale;
+                oxygenBackfillPivot.localScale = new Vector3(gaugeMaxWidth * backRatio, bls.y, bls.z);
+            }
         }
     }
 }
