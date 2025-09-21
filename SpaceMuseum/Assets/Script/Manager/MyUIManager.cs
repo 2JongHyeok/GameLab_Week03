@@ -140,6 +140,7 @@ public class MyUIManager : MonoBehaviour
             gm.bytes -= gm.moveSpeedUpgradePrice;
             gm.moveSpeedLevel++;
             gm.moveSpeedUpgradePrice += 300; // 가격 300원 증가
+            gm.moveSpeed += 2;
             UpdateAllUI();
         }
     }

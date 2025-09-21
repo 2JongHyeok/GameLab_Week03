@@ -4,8 +4,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed = 6f;      // 걷는 속도
-    public float sprintSpeed = 10f;   // 달리기 속도
+    
     private float rotationSpeed = 5f;
     public float jumpForce = 7f;
     private float originalMoveSpeed;
@@ -26,13 +25,15 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool jumpRequested = false;
     private bool isSprinting = false; // 달리기 상태 변수
+    InGameManager gm;
 
     void Start()
     {
+        gm = InGameManager.Instance;
         rb = GetComponent<Rigidbody>();
         rb.useGravity = true;
         rb.freezeRotation = true;
-        originalMoveSpeed = moveSpeed;
+        originalMoveSpeed = gm.moveSpeed;
     }
 
     void Update()
@@ -85,7 +86,7 @@ public class PlayerController : MonoBehaviour
     void HandleMovementAndRotation()
     {
         // --- [수정] 현재 속도를 걷기/달리기 상태에 따라 결정 ---
-        float baseSpeed = isSprinting ? sprintSpeed : moveSpeed;
+        float baseSpeed = isSprinting ? gm.moveSpeed * 1.5f : gm.moveSpeed;
         float currentSpeed = baseSpeed * currentSpeedMultiplier;
 
         // 카메라 기준 이동 방향 계산 (기존과 동일)

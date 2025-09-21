@@ -8,6 +8,7 @@ public class InGameManager : MonoBehaviour
 
     [Header("플레이어 재화")]
     public int bytes = 10000; // 임시로 1000원을 가지고 시작
+    public float moveSpeed = 6f;
 
     [Header("테더 데이터")]
     public int tetherCount = 10;
