@@ -2514,8 +2514,8 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 581950184}
   projectileSpeed: 15
   projectileLifeTime: 5
-  explosionRadius: 5
-  explosionDamage: 3
+  explosionRadius: 2
+  explosionDamage: 20
 --- !u!65 &383898806
 BoxCollider:
   m_ObjectHideFlags: 0

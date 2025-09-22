@@ -12,6 +12,7 @@ public class ScreenFader : MonoBehaviour
 
     private void Awake()
     {
+        gameObject.SetActive(false);
         if (fadeImage != null)
         {
             // 시작할 때 완전히 투명하게
@@ -23,7 +24,7 @@ public class ScreenFader : MonoBehaviour
     public IEnumerator FadeOut()
     {
         if (fadeImage == null) yield break;
-
+        gameObject.SetActive(true);
         float timer = 0f;
         while (timer < fadeDuration)
         {
@@ -53,5 +54,6 @@ public class ScreenFader : MonoBehaviour
 
             yield return null;
         }
+        gameObject.SetActive(false);
     }
 }
