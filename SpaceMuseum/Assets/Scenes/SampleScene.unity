@@ -3384,7 +3384,7 @@ MonoBehaviour:
   upgradeInventoryLevelText: {fileID: 2067610345}
   InventoryUIText: {fileID: 1271642782}
   screenFader: {fileID: 1796880195}
-  oxygenSystem: {fileID: 0}
+  oxygenSystem: {fileID: 982978113}
   playerController: {fileID: 2011171095}
   playerHpSlider: {fileID: 503129880}
 --- !u!1 &580475351
@@ -9848,19 +9848,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2975540577111700844, guid: ab2768e8ce7a9164bbe8f1de3d946419, type: 3}
       propertyPath: m_fontSize
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2975540577111700844, guid: ab2768e8ce7a9164bbe8f1de3d946419, type: 3}
       propertyPath: m_fontSizeBase
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3130692176187259871, guid: ab2768e8ce7a9164bbe8f1de3d946419, type: 3}
-      propertyPath: m_fontSize
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3130692176187259871, guid: ab2768e8ce7a9164bbe8f1de3d946419, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5210163021520632298, guid: ab2768e8ce7a9164bbe8f1de3d946419, type: 3}
       propertyPath: m_Name
