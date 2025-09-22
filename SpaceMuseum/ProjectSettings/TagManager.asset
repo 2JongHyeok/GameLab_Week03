@@ -8,6 +8,7 @@ TagManager:
   - OxygenSource
   - Tether
   - Mineral
+  - DangerousPlant
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Wall
   - SellZoneGuard
   - Player
-  - 
+  - DangerousPlant
   - 
   - 
   - 
