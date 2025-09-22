@@ -266,7 +266,23 @@ public class MyUIManager : MonoBehaviour
     public void UpdateWeightUI(int now, int max)
     {
         if (InventoryUIText != null)
-            InventoryUIText.text = $"Weight : {now} / {max}";
+        {
+            if (now <= max)
+            {
+                InventoryUIText.color = Color.black;
+                InventoryUIText.text = $"Weight : {now} / {max}";
+            }
+            else if (now<= max*1.5)
+            {
+                InventoryUIText.color = Color.yellow;
+                InventoryUIText.text = $"Weight : {now} / {max}   speed 50% down";
+            }
+            else
+            {
+                InventoryUIText.color = Color.red;
+                InventoryUIText.text = $"Weight : {now} / {max}    speed 90% down";
+            }
+        }
     }
 
 

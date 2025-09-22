@@ -122,7 +122,7 @@ public class PlantSpawnManager : MonoBehaviour
                         if (!IsFarEnoughFromSpawned(spawnPos, minimumSpawnDistance))
                             continue;
 
-                        // 6) ½ºÆù
+                        
                         Instantiate(prefab, spawnPos, rot);
                         spawnedPositions.Add(spawnPos);
 
