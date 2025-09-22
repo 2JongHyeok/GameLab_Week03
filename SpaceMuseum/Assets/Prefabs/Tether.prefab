@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linePrefab: {fileID: 8566250293528757307, guid: 887445ff88d464c42ad4e48def105fae, type: 3}
-  connectionRadius: 11
+  connectionRadius: 15
   lineAttachHeight: 1
   linkToBaseCamp: 1
   baseTag: OxygenSource

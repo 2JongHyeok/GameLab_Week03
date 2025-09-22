@@ -239,7 +239,7 @@ public class MyUIManager : MonoBehaviour
         {
             gm.bytes -= gm.moveSpeedUpgradePrice;
             gm.moveSpeedLevel++;
-            gm.moveSpeedUpgradePrice += InGameManager.Instance.moveSpeedUpgradePrice; // 가격 300원 증가
+            gm.moveSpeedUpgradePrice += 300; // 가격 300원 증가
             gm.moveSpeed += 2;
             UpdateAllUI();
         }
@@ -252,7 +252,7 @@ public class MyUIManager : MonoBehaviour
             gm.bytes -= gm.inventoryCapacityUpgradePrice;
             gm.inventoryCapacityLevel++;
             gm.maxWeight += 10;
-            gm.inventoryCapacityUpgradePrice += InGameManager.Instance.inventoryCapacityUpgradePrice; // 가격 500원 증가
+            gm.inventoryCapacityUpgradePrice += 100; // 가격 500원 증가
             gm.UpdateWeight();
             UpdateAllUI();
         }

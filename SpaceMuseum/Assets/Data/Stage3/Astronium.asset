@@ -15,6 +15,6 @@ MonoBehaviour:
   mineralName: Astronium
   mineralMaterial: {fileID: 2100000, guid: 8579e46e78bb9a64786281fd7c5e4073, type: 2}
   weight: 50
-  price: 10000
+  price: 10000000
   spawnProbability: 0.0001
   mineralIcon: {fileID: 21300000, guid: 398db857bc2535941a1436371c4b8671, type: 3}
