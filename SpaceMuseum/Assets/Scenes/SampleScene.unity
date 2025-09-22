@@ -11022,8 +11022,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxOxygen: 100
   currentOxygen: 0
-  oxygenRegenRate: 10
-  oxygenDepleteRate: 5
+  oxygenRegenRate: 25
+  oxygenDepleteRate: 20
   oxygenGaugePivot: {fileID: 594693238}
   gaugeMaxWidth: 1
   oxygenLinkLine: {fileID: 1695256655}
