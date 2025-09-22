@@ -316,7 +316,6 @@ public class MyUIManager : MonoBehaviour
             yield return StartCoroutine(screenFader.FadeOut());
 
         // --- 何劝 贸府 ---
-        Debug.Log("何劝 贸府 矫累");
 
 
         PlayerController.Instance.PlayerDead();

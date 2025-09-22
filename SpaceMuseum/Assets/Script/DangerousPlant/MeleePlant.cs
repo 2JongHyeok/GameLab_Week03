@@ -8,7 +8,6 @@ public class MeleePlant : DangerousPlant
 
     protected override void Attack()
     {
-        Debug.Log("근접 식물이 공격합니다!");
 
         // 1. 공격 애니메이션 재생
         if (animator != null)

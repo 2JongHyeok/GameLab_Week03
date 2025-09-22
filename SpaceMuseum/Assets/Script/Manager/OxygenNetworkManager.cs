@@ -22,7 +22,7 @@ public class OxygenNetworkManager : MonoBehaviour
     {
         // 인스펙터에서 oxygenSources를 설정하는 것을 권장
         if (oxygenSources.Count == 0)
-            Debug.LogWarning("oxygenSources가 비어 있습니다. 인스펙터에서 설정하세요.");
+            //Debug.LogWarning("oxygenSources가 비어 있습니다. 인스펙터에서 설정하세요.");
     }
 
     /// <summary>

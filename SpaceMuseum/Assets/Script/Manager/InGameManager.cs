@@ -84,7 +84,6 @@ public class InGameManager : MonoBehaviour
         {
             if (collectionProgress[mineralName] >= 100)
             {
-                Debug.Log($"{mineralName} 은(는) 이미 100% 완료되어 기부할 수 없습니다.");
                 return false;
             }
 
@@ -97,7 +96,6 @@ public class InGameManager : MonoBehaviour
             collectionProgress.Add(mineralName, progressToAdd);
         }
 
-        Debug.Log($"{mineralName} 기부 완료! 현재 진행도: {collectionProgress[mineralName]}%");
         MyUIManager.Instance.UpdateCollectionDisplay();
 
         return true; // 기부 성공

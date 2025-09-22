@@ -57,10 +57,6 @@ public class PlayerCarrier : MonoBehaviour
         Vector3 newPosition = carryPoint.up * (carriedMinerals.Count - 1) * mineralSpacing;
         mineral.transform.localPosition = newPosition;
         mineral.transform.localRotation = Quaternion.identity;
-
-
-        Debug.Log(igm.currentWeight);
-        Debug.Log(mineral.data.weight);
         igm.currentWeight += mineral.data.weight;
         UpdateWeightUI();
 
@@ -78,7 +74,6 @@ public class PlayerCarrier : MonoBehaviour
         if (Physics.CheckSphere(dropPosition, dropCheckRadius, obstacleMask))
         {
             ShowWarning("Can't Drop Mineral");
-            Debug.Log("Drop failed: Obstacle detected at " + dropPosition);
             return;
         }
 
@@ -123,7 +118,6 @@ public class PlayerCarrier : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning(message); // UI가 없을 경우 로그로 출력
         }
     }
 

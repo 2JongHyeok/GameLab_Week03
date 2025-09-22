@@ -55,11 +55,9 @@ public abstract class DangerousPlant : MonoBehaviour
     // PlantManager가 매 프레임 호출
     public void OnUpdateTick()
     {
-        Debug.Log("업데이트 불림.");
         // 플레이어가 비활성화/파괴로 사라진 경우 즉시 정리
         if (isPlayerInRange && (player == null || !player.gameObject.activeInHierarchy))
         {
-            Debug.Log("플레이어 사라짐.");
 
             isPlayerInRange = false;
             playerOverlapCount = 0;
@@ -68,7 +66,6 @@ public abstract class DangerousPlant : MonoBehaviour
 
         if (isPlayerInRange && Time.time >= nextAttackTime)
         {
-            Debug.Log("공격");
 
             Attack();
             nextAttackTime = Time.time + attackCooldown;
@@ -80,14 +77,13 @@ public abstract class DangerousPlant : MonoBehaviour
         // 레이어 확인
         if (((1 << other.gameObject.layer) & playerLayerMaskValue) == 0)
             return;
-        Debug.Log("플레이어가 범위 안에 들어옴");
         // 플레이어 루트 & 체력 캐시
         if (player == null)
         {
             player = other.transform.root; // 상황에 따라 root가 아닌 특정 트랜스폼이면 교체
             if (ph == null)
                 other.GetComponentInParent<PlayerHealth>()?.TryGetComponent(out ph);
-            Debug.Log("체력 얻어옴");
+          
         }
 
         playerOverlapCount++;

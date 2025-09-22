@@ -44,7 +44,6 @@ public class SpitterProjectile : MonoBehaviour
             {
                 tether.BreakAllConnections();          // 연결 정리 (라인 제거 포함)
                 Destroy(tether.gameObject);
-                Debug.Log("테더 파괴됨!");
             }
             OxygenNetworkManager.Instance.UpdateOxygenNetwork();
         }

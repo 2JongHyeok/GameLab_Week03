@@ -14,14 +14,12 @@ public class CollectionPage : MonoBehaviour
     // 페이지 초기화 (MyUIManager가 호출)
     public void InitializePage()
     {
-        Debug.Log("InitializePage 실행됨, 미네랄 개수: " + mineralsForThisStage.Count);
         // 이미 슬롯이 생성되었다면 중복 생성을 막기 위해 함수 종료
         if (spawnedSlots.Count > 0) return;
 
         // 이 스테이지에 해당하는 미네랄 데이터 목록을 순회
         foreach (MineralData mineralData in mineralsForThisStage)
         {
-            Debug.Log("슬롯 생성: " + mineralData.mineralName);
             // 슬롯 프리팹을 slotParent의 자식으로 생성
             GameObject slotObject = Instantiate(collectionSlotPrefab, slotParent);
             CollectionSlot slot = slotObject.GetComponent<CollectionSlot>();

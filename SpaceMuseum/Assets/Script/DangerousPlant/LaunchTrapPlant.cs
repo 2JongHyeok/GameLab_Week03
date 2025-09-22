@@ -13,7 +13,6 @@ public class LaunchTrapPlant : DangerousPlant
         if (!hasEmerged)
         {
             hasEmerged = true;
-            Debug.Log("함정 식물이 땅에서 튀어나옵니다!");
 
             if (animator != null)
             {

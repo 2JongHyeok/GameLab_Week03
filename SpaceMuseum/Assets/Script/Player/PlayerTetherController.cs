@@ -17,7 +17,6 @@ public class PlayerTetherController : MonoBehaviour
     {
         if (!tetherPrefab)
         {
-            Debug.LogWarning("Tether Prefab이 설정되지 않았습니다!");
             return;
         }
 
