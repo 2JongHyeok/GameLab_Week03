@@ -1,118 +1,119 @@
 using UnityEngine;
-using System.Collections;
 
 [DisallowMultipleComponent]
-[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(Rigidbody))] // Kinematic 권장
 public abstract class DangerousPlant : MonoBehaviour
 {
     [Header("공통 설정")]
-    public float attackCooldown = 3f;     // 공격 주기
-    public LayerMask playerLayer;         // 플레이어 레이어
+    public float attackCooldown = 3f;
+    public LayerMask playerLayer;
 
-    // 싱글톤/참조 (필요 시 자동 연결)
-    [SerializeField] protected PlayerHealth ph;
+    protected Transform player;                // 범위 내 플레이어 루트
     protected PlayerController pc;
-    protected InGameManager igm;
-    protected MyUIManager uim;
+    [SerializeField] protected PlayerHealth ph; // 필요 시 직접 할당 가능
 
-    // 내부 상태
-    protected Transform player;           // 플레이어 루트 Transform
-    private int playerOverlapCount = 0;   // 트리거 안의 플레이어 콜라이더 개수
-    private Coroutine attackCoroutine;
+    protected bool isPlayerInRange = false;
+
+    private float nextAttackTime = 0f;
+    private int playerOverlapCount = 0;        // 다중 콜라이더 대응
+    private int playerLayerMaskValue;          // 미세 최적화
 
     protected virtual void Awake()
     {
-        var col = GetComponent<Collider>();
-        col.isTrigger = true; // 트리거로 동작
+        var col = GetComponent<BoxCollider>();
+        col.isTrigger = true;
+
+        var rb = GetComponent<Rigidbody>();
+        rb.isKinematic = true; // 트리거 충돌만 받을 것
+
+        playerLayerMaskValue = playerLayer.value;
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         pc = PlayerController.Instance;
-        ph = ph ?? pc?.GetComponent<PlayerHealth>();
-        igm = InGameManager.Instance;
-        uim = MyUIManager.Instance;
     }
 
-    // === Trigger 진입/이탈 관리 ===
+    protected virtual void OnEnable()
+    {
+        if (PlantManager.Instance != null)
+            PlantManager.Instance.RegisterPlant(this);
+    }
+
+    protected virtual void OnDisable()
+    {
+        if (PlantManager.Instance != null)
+            PlantManager.Instance.UnregisterPlant(this);
+        // 상태 리셋(안전)
+        player = null;
+        ph = null;
+        isPlayerInRange = false;
+        playerOverlapCount = 0;
+    }
+
+    // PlantManager가 매 프레임 호출
+    public void OnUpdateTick()
+    {
+        // 플레이어가 비활성화/파괴로 사라진 경우 즉시 정리
+        if (isPlayerInRange && (player == null || !player.gameObject.activeInHierarchy))
+        {
+            isPlayerInRange = false;
+            playerOverlapCount = 0;
+            ph = null;
+        }
+
+        if (isPlayerInRange && Time.time >= nextAttackTime)
+        {
+            Attack();
+            nextAttackTime = Time.time + attackCooldown;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (!IsPlayerCollider(other)) return;
+        // 레이어 확인
+        if (((1 << other.gameObject.layer) & playerLayerMaskValue) == 0)
+            return;
 
-        var root = GetRoot(other);
-
-        // 최초 진입 시 플레이어 고정
-        if (player == null) player = root;
-        if (root != player) return;
+        // 플레이어 루트 & 체력 캐시
+        if (player == null)
+        {
+            player = other.transform.root; // 상황에 따라 root가 아닌 특정 트랜스폼이면 교체
+            if (ph == null)
+                other.GetComponentInParent<PlayerHealth>()?.TryGetComponent(out ph);
+        }
 
         playerOverlapCount++;
-
-        // 0 -> 1 될 때만 루프 시작 (중복 방지)
-        if (playerOverlapCount == 1 && attackCoroutine == null)
-            attackCoroutine = StartCoroutine(AttackLoop());
+        isPlayerInRange = playerOverlapCount > 0;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (!IsPlayerCollider(other)) return;
+        if (((1 << other.gameObject.layer) & playerLayerMaskValue) == 0)
+            return;
 
-        var root = GetRoot(other);
-        if (root != player) return;
-
+        // 다중 콜라이더 대응
         playerOverlapCount = Mathf.Max(0, playerOverlapCount - 1);
-
-        // 1 -> 0 될 때만 루프 종료
-        if (playerOverlapCount == 0 && attackCoroutine != null)
+        if (playerOverlapCount == 0)
         {
-            StopCoroutine(attackCoroutine);
-            attackCoroutine = null;
-            player = null; // 필요하면 유지해도 됨
+            isPlayerInRange = false;
+            player = null;
+            ph = null;
         }
     }
 
-    // 플레이어 판별: 레이어(필수) + 필요하면 태그까지
-    private bool IsPlayerCollider(Collider c)
-    {
-        if ((playerLayer.value & (1 << c.gameObject.layer)) == 0) return false;
-        // Tag까지 쓰고 싶으면 아래 한 줄 추가
-        // if (!c.CompareTag("Player")) return false;
-        return true;
-    }
-
-    // Rigidbody가 있으면 그 Transform, 없으면 최상위 Transform
-    private Transform GetRoot(Collider c)
-    {
-        return c.attachedRigidbody ? c.attachedRigidbody.transform : c.transform.root;
-    }
-
-    // === 공격 루프 ===
-    private IEnumerator AttackLoop()
-    {
-        // 첫 발 즉시
-        Attack();
-
-        // 이후 쿨다운마다
-        while (playerOverlapCount > 0)
-        {
-            yield return new WaitForSeconds(attackCooldown);
-            if (playerOverlapCount > 0)
-                Attack();
-        }
-
-        attackCoroutine = null;
-    }
-
-    // 자식이 구현
+    // 각 식물 전용 공격 로직
     protected abstract void Attack();
 
-    private void OnDisable()
+#if UNITY_EDITOR
+    private void OnValidate()
     {
-        if (attackCoroutine != null)
-        {
-            StopCoroutine(attackCoroutine);
-            attackCoroutine = null;
-        }
-        playerOverlapCount = 0;
-        player = null;
+        var col = GetComponent<BoxCollider>();
+        if (col != null) col.isTrigger = true;
+
+        var rb = GetComponent<Rigidbody>();
+        if (rb != null) rb.isKinematic = true;
     }
+#endif
 }

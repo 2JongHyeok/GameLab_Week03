@@ -22,12 +22,12 @@ public class SpitterProjectile : MonoBehaviour
     private void OnDestroy()
     {
         // ¼ö¸í ÃÊ°ú·Î ÆÄ±«µÉ ¶§µµ Æø¹ß
-        Explode();
+        //Explode();
     }
 
     private void Explode()
     {
-        Debug.Log("¾¾¾Ñ Æø¹ß!");
+        //Debug.Log("¾¾¾Ñ Æø¹ß!");
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
 

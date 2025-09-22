@@ -4,7 +4,7 @@ public class SpitterPlant : DangerousPlant
 {
     [Header("원거리 공격 설정")]
     public GameObject projectilePrefab;        // 발사체 프리팹
-    public Transform projectileSpawnPoint;     // 발사 위치 (머리 부분)
+    public Transform projectileSpawnPoint;     // 발사 위치(없으면 this 사용)
     public float projectileSpeed = 15f;        // 발사 속도
     public float projectileLifeTime = 5f;      // 자동 파괴 시간
 
@@ -12,40 +12,43 @@ public class SpitterPlant : DangerousPlant
     public float explosionRadius = 5f;         // 폭발 반경
     public float explosionDamage = 20f;        // 폭발 데미지
 
-    protected void Update()
+    void Update()
     {
+        // 수평(Y 고정) 조준만 수행
         if (player != null)
         {
-            Vector3 targetPos = player.position;
-
-            // y축 고정 회전 (머리가 땅속에 파묻히지 않게)
-            targetPos.y = transform.position.y;
-
-            transform.LookAt(targetPos);
+            Vector3 target = player.position;
+            target.y = transform.position.y;
+            transform.LookAt(target);
         }
     }
 
     protected override void Attack()
     {
-        Debug.Log($"[SpitterPlant.Attack] 발사! 시간: {Time.time}");
-        if (projectilePrefab == null || projectileSpawnPoint == null) return;
+        // 기본 공격: 플레이어 향해 발사체 1발
+        if (player == null || projectilePrefab == null) return;
 
-        Debug.Log("원거리 식물이 폭발탄을 발사합니다!");
+        Transform spawn = projectileSpawnPoint != null ? projectileSpawnPoint : transform;
 
-        // 발사체 생성
-        GameObject projectileGO = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+        // 생성
+        GameObject go = Instantiate(projectilePrefab, spawn.position, spawn.rotation);
 
-        // 속도 적용
-        if (projectileGO.TryGetComponent<Rigidbody>(out var rb))
+        // 속도 부여(표준 Rigidbody 사용)
+        if (go.TryGetComponent<Rigidbody>(out var rb))
         {
-            Vector3 direction = (player.position - projectileSpawnPoint.position).normalized;
-            rb.linearVelocity = direction * projectileSpeed;
+            Vector3 dir = (player.position - spawn.position).normalized;
+            rb.linearVelocity = dir * projectileSpeed; // Rigidbody.linearVelocity 아님
         }
 
-        // Projectile 설정
-        if (projectileGO.TryGetComponent<SpitterProjectile>(out var proj))
+        // 스크립트 초기화(있으면)
+        if (go.TryGetComponent<SpitterProjectile>(out var proj))
         {
             proj.Initialize(explosionRadius, explosionDamage, projectileLifeTime);
+        }
+        else
+        {
+            // 발사체 스크립트가 수명 정리를 안 한다면 최소한 파괴 예약
+            if (projectileLifeTime > 0f) Destroy(go, projectileLifeTime);
         }
     }
 }
