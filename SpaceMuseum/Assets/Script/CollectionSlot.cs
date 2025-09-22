@@ -8,6 +8,8 @@ public class CollectionSlot : MonoBehaviour
     public Image mineralIcon;       // 미네랄 아이콘 이미지
     public TextMeshProUGUI progressText;       // 진행도 텍스트 (예: "20%")
     public TextMeshProUGUI nameText;       // 미네랄 이름 텍스트
+    public TextMeshProUGUI sellPriceText;       // 판매 가격
+    public TextMeshProUGUI droneUpgradeText;       // 드론 업그레이드
     public Sprite unknownIcon;
 
     private MineralData associatedMineral; // 이 슬롯이 담당하는 미네랄 데이터
@@ -32,6 +34,7 @@ public class CollectionSlot : MonoBehaviour
         if (progressText != null)
         {
             progressText.text = progress + "%";
+            sellPriceText.text = associatedMineral.price+" Byte";
         }
         if (progress == 0)
         {
@@ -52,6 +55,10 @@ public class CollectionSlot : MonoBehaviour
             mineralIcon.sprite = associatedMineral.mineralIcon;
             float alpha = Mathf.Lerp(0.2f, 1.0f, Mathf.Clamp01(progress / 100f));
             mineralIcon.color = new Color(mineralIcon.color.r, mineralIcon.color.g, mineralIcon.color.b, alpha);
+        }
+        if (progress >= 100)
+        {
+            droneUpgradeText.text = "Drone Damage +5";
         }
     }
 

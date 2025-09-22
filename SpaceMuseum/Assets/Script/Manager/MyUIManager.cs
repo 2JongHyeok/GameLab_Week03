@@ -178,7 +178,7 @@ public class MyUIManager : MonoBehaviour
         if (buyTetherButton != null)
         {
             buyTetherButton.interactable = (InGameManager.Instance.tetherCount < InGameManager.maxTetherCount 
-                                               || gm.bytes < gm.tetherBundlePrice);
+                                               && gm.bytes >= gm.tetherBundlePrice);
         }
         // 이동 속도 업그레이드 버튼 업데이트
         if (upgradeMoveSpeedButton != null)
@@ -239,7 +239,7 @@ public class MyUIManager : MonoBehaviour
         {
             gm.bytes -= gm.moveSpeedUpgradePrice;
             gm.moveSpeedLevel++;
-            gm.moveSpeedUpgradePrice += 300; // 가격 300원 증가
+            gm.moveSpeedUpgradePrice += InGameManager.Instance.moveSpeedUpgradePrice; // 가격 300원 증가
             gm.moveSpeed += 2;
             UpdateAllUI();
         }
@@ -252,7 +252,7 @@ public class MyUIManager : MonoBehaviour
             gm.bytes -= gm.inventoryCapacityUpgradePrice;
             gm.inventoryCapacityLevel++;
             gm.maxWeight += 10;
-            gm.inventoryCapacityUpgradePrice += 500; // 가격 500원 증가
+            gm.inventoryCapacityUpgradePrice += InGameManager.Instance.inventoryCapacityUpgradePrice; // 가격 500원 증가
             gm.UpdateWeight();
             UpdateAllUI();
         }

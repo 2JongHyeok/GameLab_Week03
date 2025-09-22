@@ -9,14 +9,14 @@ public class InGameManager : MonoBehaviour
 
 
     [Header("플레이어 데이터")]
-    public int bytes = 10000; // 임시로 1000원을 가지고 시작
+    public int bytes = 0; // 임시로 1000원을 가지고 시작
     public float moveSpeed = 6f;
     public bool isDead = false;
     public float maxHealth = 100f;
     public float currentHealth;
 
     [Header("테더 데이터")]
-    public int tetherCount = 10;
+    public int tetherCount = 30;
     public const int maxTetherCount = 99; // 테더 최대 소지 개수 (상수)
     public int tetherBundlePrice = 100; // 테더 10개 묶음 가격
 
@@ -27,7 +27,7 @@ public class InGameManager : MonoBehaviour
 
     [Header("가방 데이터")]
     public int inventoryCapacityLevel = 1;
-    public int inventoryCapacityUpgradePrice = 500; // 초기 가격
+    public int inventoryCapacityUpgradePrice = 100; // 초기 가격
     public int currentWeight = 0;
     public int maxWeight = 10;
 
@@ -88,8 +88,11 @@ public class InGameManager : MonoBehaviour
             }
 
             collectionProgress[mineralName] += progressToAdd;
-            if (collectionProgress[mineralName] > 100)
+            if (collectionProgress[mineralName] >= 100)
+            {
                 collectionProgress[mineralName] = 100;
+                Drone.Instance.attackDamage += 5;
+            }
         }
         else
         {
