@@ -27,6 +27,14 @@ public class PlayerController : MonoBehaviour
     private bool jumpRequested = false;
     private bool isSprinting = false; // 달리기 상태 변수
     private bool isAlive = true;
+
+    [Header("DangerousPlant")]
+    private bool trapLaunchRequested = false;
+    private float trapLaunchForce = 0f;
+    private bool wasLaunchedByTrap = false; // 함정 발사 여부 추적
+    private float landingDamage = 50f;
+    [SerializeField] private PlayerHealth playerHealth;
+
     InGameManager gm;
 
     private void Awake()
@@ -77,6 +85,29 @@ public class PlayerController : MonoBehaviour
             jumpRequested = false;
         }
 
+        if (trapLaunchRequested)
+        {
+            rb.AddForce(Vector3.up * trapLaunchForce, ForceMode.Impulse);
+            trapLaunchRequested = false;
+        }
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (wasLaunchedByTrap && collision.gameObject.CompareTag("Ground"))
+        {
+            playerHealth?.TakeDamage(landingDamage);
+
+            wasLaunchedByTrap = false; // 다시 초기화
+        }
+    }
+
+    public void RequestTrapLaunch(float force)
+    {
+        trapLaunchForce = force;
+        trapLaunchRequested = true;
+        wasLaunchedByTrap = true;
     }
     public void ApplyWeightPenalty(float currentWeight, float maxWeight)
     {
@@ -139,4 +170,6 @@ public class PlayerController : MonoBehaviour
     {
           transform.position = new Vector3(10, 1, 0); // fallback 위치
     }
+
+
 }
