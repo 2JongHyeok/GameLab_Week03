@@ -9,6 +9,7 @@ TagManager:
   - Tether
   - Mineral
   - DangerousPlant
+  - DroneRange
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - SellZoneGuard
   - Player
   - DangerousPlant
-  - 
+  - DroneRange
   - 
   - 
   - 

@@ -2471,7 +2471,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2
+  m_Radius: 2.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &389908009 stripped
 MonoBehaviour:
@@ -3384,7 +3384,7 @@ MonoBehaviour:
   upgradeInventoryLevelText: {fileID: 2067610345}
   InventoryUIText: {fileID: 1271642782}
   screenFader: {fileID: 1796880195}
-  oxygenSystem: {fileID: 2011171101}
+  oxygenSystem: {fileID: 0}
   playerController: {fileID: 2011171095}
   playerHpSlider: {fileID: 503129880}
 --- !u!1 &580475351
@@ -5177,6 +5177,83 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5625793524298947682, guid: 09ade435346a0674b9dc328129448972, type: 3}
   m_PrefabInstance: {fileID: 691925003}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &982978111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 982978112}
+  - component: {fileID: 982978114}
+  - component: {fileID: 982978113}
+  m_Layer: 9
+  m_Name: OxygenCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &982978112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982978111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2011171100}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &982978113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982978111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f13cb67fd3a2c24cbc291eca9ae6684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxOxygen: 100
+  currentOxygen: 0
+  oxygenRegenRate: 25
+  oxygenDepleteRate: 20
+  oxygenGaugePivot: {fileID: 594693238}
+  gaugeMaxWidth: 1
+  oxygenLinkLine: {fileID: 1695256655}
+  lineAttachHeight: 1
+  oxygenBackfillPivot: {fileID: 1562096824}
+--- !u!136 &982978114
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982978111}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &989889730
 GameObject:
   m_ObjectHideFlags: 0
@@ -8337,6 +8414,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drone
       objectReference: {fileID: 0}
+    - target: {fileID: 870913250998166179, guid: 0e1372eda11bd7545a01c35e4744e40f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 870913250998166179, guid: 0e1372eda11bd7545a01c35e4744e40f, type: 3}
+      propertyPath: m_TagString
+      value: DroneRange
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570879536864046538, guid: 0e1372eda11bd7545a01c35e4744e40f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4570879536864046538, guid: 0e1372eda11bd7545a01c35e4744e40f, type: 3}
+      propertyPath: m_TagString
+      value: DroneRange
+      objectReference: {fileID: 0}
     - target: {fileID: 7835631245241782040, guid: 0e1372eda11bd7545a01c35e4744e40f, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3
@@ -11073,7 +11166,6 @@ GameObject:
   - component: {fileID: 2011171097}
   - component: {fileID: 2011171096}
   - component: {fileID: 2011171095}
-  - component: {fileID: 2011171101}
   - component: {fileID: 2011171102}
   - component: {fileID: 2011171103}
   - component: {fileID: 2011171104}
@@ -11229,29 +11321,9 @@ Transform:
   - {fileID: 1695256654}
   - {fileID: 58414858}
   - {fileID: 1761496254}
+  - {fileID: 982978112}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2011171101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011171094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f13cb67fd3a2c24cbc291eca9ae6684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxOxygen: 100
-  currentOxygen: 0
-  oxygenRegenRate: 25
-  oxygenDepleteRate: 20
-  oxygenGaugePivot: {fileID: 594693238}
-  gaugeMaxWidth: 1
-  oxygenLinkLine: {fileID: 1695256655}
-  lineAttachHeight: 1
-  oxygenBackfillPivot: {fileID: 1562096824}
 --- !u!114 &2011171102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11316,7 +11388,7 @@ MonoBehaviour:
   damagePerSecond: 10
   healDelay: 3
   healRate: 20
-  oxygenSystem: {fileID: 2011171101}
+  oxygenSystem: {fileID: 982978113}
   playerController: {fileID: 2011171095}
 --- !u!1 &2027152608
 GameObject:
