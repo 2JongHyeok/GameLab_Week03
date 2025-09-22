@@ -3,7 +3,7 @@ using UnityEngine;
 public class LaunchTrapPlant : DangerousPlant
 {
     [Header("함정 설정")]
-    public float launchForce = 200f; // 플레이어를 띄우는 힘
+    private float launchForce = 200f; // 플레이어를 띄우는 힘
     public Animator animator;
 
     private bool isTriggered = false; // 한 번만 발동되도록 설정

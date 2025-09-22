@@ -84,27 +84,22 @@ public class Tether : MonoBehaviour
     {
         AllTethers.Remove(this);
 
-        // 내가 소유한 테더-테더 라인 정리
-        foreach (var conn in connections)
-        {
-            if (conn.isOwner && conn.line)
-            {
-                string key = EdgeKey(this, conn.otherTether);
-                ExistingEdges.Remove(key);
-                Destroy(conn.line.gameObject);
-            }
-        }
-        foreach (var conn in connections)
-            conn.otherTether?.connections?.RemoveAll(c => c.otherTether == this);
-        connections.Clear();
-
-        // ★ 테더-베이스 라인 정리
+        // 1) 베이스 라인 정리
         if (baseLine)
         {
             Destroy(baseLine.gameObject);
             baseLine = null;
             baseTarget = null;
         }
+
+        // 2) 테더-테더 라인 및 키 정리 (양쪽 리스트/라인 모두 정리)
+        BreakAllConnections();
+
+        // 3) DSU 재구성 (삭제 반영)
+        RebuildDisjointSets();
+
+        // 4) 산소 네트워크 즉시 재계산
+        OxygenNetworkManager.Instance?.UpdateOxygenNetwork();
     }
 
     // ----------------- Union-Find -----------------
@@ -194,6 +189,8 @@ public class Tether : MonoBehaviour
 
         // 연결 생성 직후 시각 갱신 1회
         UpdateVisuals();
+        RebuildDisjointSets();
+        OxygenNetworkManager.Instance?.UpdateOxygenNetwork();
     }
 
     public void UpdateVisuals()
@@ -317,5 +314,78 @@ public class Tether : MonoBehaviour
         }
 
         lr.SetPositions(positions);
+    }
+
+    public void BreakEdgeWith(Tether other, bool destroyLine = true)
+    {
+        if (other == null) return;
+
+        // 1) 내 리스트에서 해당 연결 찾기
+        var myConn = connections.FirstOrDefault(c => c.otherTether == other);
+        if (myConn != null)
+        {
+            // 키 정리 (중복 방지용)
+            string key = EdgeKey(this, other);
+            ExistingEdges.Remove(key);
+
+            // 라인 파괴: 기본은 라인 한번만 제거되면 충분하니 destroyLine=true로 호출
+            if (destroyLine && myConn.line)
+                Destroy(myConn.line.gameObject);
+
+            connections.Remove(myConn);
+        }
+
+        // 2) 상대 리스트에서도 정리 + (라인은 이미 파괴했으니 destroyLine=false)
+        var otherConn = other.connections.FirstOrDefault(c => c.otherTether == this);
+        if (otherConn != null)
+        {
+            // 혹시 남아있던 라인이면 이쪽에서는 파괴하지 않음(중복 방지)
+            other.connections.Remove(otherConn);
+        }
+    }
+
+    public void BreakAllConnections()
+    {
+        // 복사본으로 안전 순회
+        var snapshot = connections.ToList();
+        foreach (var conn in snapshot)
+        {
+            var other = conn.otherTether;
+            // 내가 소유자든 아니든, 일괄적으로 라인은 한 번만 파괴되게 destroyLine=true로 호출
+            BreakEdgeWith(other, destroyLine: true);
+        }
+    }
+
+    public static void RebuildDisjointSets()
+    {
+        // 1) 초기화
+        foreach (var t in AllTethers)
+        {
+            t.parent = t;
+            t._rank = 0;
+        }
+
+        // 2) 현재 존재하는 간선들 기준으로 Union
+        //   - 한 라인을 두 Tether가 공유하므로, "소유자(conn.isOwner==true)만" Union 수행해도 충분
+        foreach (var t in AllTethers)
+        {
+            foreach (var conn in t.connections)
+            {
+                if (conn.isOwner && conn.otherTether != null)
+                {
+                    var a = t.FindSet();
+                    var b = conn.otherTether.FindSet();
+                    if (a != b) Link(a, b);
+                }
+            }
+        }
+    }
+
+    public static void ForceCut(Tether a, Tether b)
+    {
+        if (a == null || b == null) return;
+        a.BreakEdgeWith(b, destroyLine: true);
+        RebuildDisjointSets();
+        OxygenNetworkManager.Instance?.UpdateOxygenNetwork();
     }
 }

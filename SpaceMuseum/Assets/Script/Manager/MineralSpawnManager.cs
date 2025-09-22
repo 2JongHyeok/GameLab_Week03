@@ -48,7 +48,7 @@ public class MineralSpawnManager : MonoBehaviour
 
             Vector3 tileCenter = tileCol.bounds.center;
             Vector3 tileSize = tileCol.bounds.size;
-            Debug.Log(spawnCount);
+            //Debug.Log(spawnCount);
 
             for (int i = 0; i < spawnCount; i++)
             {
@@ -79,7 +79,7 @@ public class MineralSpawnManager : MonoBehaviour
             }
         }
 
-        Debug.Log($"총 {spawnedPositions.Count}개의 광물 상자 스폰 완료!");
+        //Debug.Log($"총 {spawnedPositions.Count}개의 광물 상자 스폰 완료!");
     }
 
     bool IsPositionValid(Vector3 position)

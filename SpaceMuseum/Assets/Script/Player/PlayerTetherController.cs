@@ -33,8 +33,6 @@ public class PlayerTetherController : MonoBehaviour
             spawnPosition.y = 0f;
 
             var go = Instantiate(tetherPrefab, spawnPosition, Quaternion.identity);
-
-            // ★ 핵심: 즉시 연결을 구축하고 그 다음 네트워크 갱신
             if (go.TryGetComponent<Tether>(out var tether))
             {
                 tether.BuildConnections(); // Start() 기다리지 않음
