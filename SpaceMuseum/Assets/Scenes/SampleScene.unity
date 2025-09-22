@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf9da575f81a01479793f8542c2a17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bytes: 100000
+  bytes: 1000
   moveSpeed: 6
   isDead: 0
   maxHealth: 100
@@ -3038,69 +3038,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 3
---- !u!1001 &540731660
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2219640692523980280, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-      propertyPath: m_Name
-      value: SpitterPlant
-      objectReference: {fileID: 0}
-    - target: {fileID: 3893612189499630803, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4457207364603537084, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 20.225327
-      objectReference: {fileID: 0}
-    - target: {fileID: 4457207364603537084, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 4457207364603537084, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 11.005465
-      objectReference: {fileID: 0}
-    - target: {fileID: 4457207364603537084, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4457207364603537084, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4457207364603537084, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4457207364603537084, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4457207364603537084, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4457207364603537084, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4457207364603537084, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7907162034172812462, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-    - {fileID: 1640865773598880788, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
 --- !u!1 &562486977
 GameObject:
   m_ObjectHideFlags: 0
@@ -5718,14 +5655,14 @@ MonoBehaviour:
   - level: 2
     prefabs:
     - {fileID: 6828733487768661803, guid: 4521b27f262fd514cbb0440ffbc39d89, type: 3}
-    - {fileID: 2314640881641312090, guid: 7c7dd4944e8a7414897faad7d3b5592b, type: 3}
+    - {fileID: 2219640692523980280, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
   - level: 3
     prefabs:
     - {fileID: 6828733487768661803, guid: 4521b27f262fd514cbb0440ffbc39d89, type: 3}
     - {fileID: 2314640881641312090, guid: 7c7dd4944e8a7414897faad7d3b5592b, type: 3}
     - {fileID: 2219640692523980280, guid: 21dee188316ca1841b021bd4500946c1, type: 3}
-  minSpawnPerTile: 12
-  maxSpawnPerTile: 16
+  minSpawnPerTile: 30
+  maxSpawnPerTile: 40
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 136
@@ -12069,4 +12006,3 @@ SceneRoots:
   - {fileID: 411116677}
   - {fileID: 1736519715}
   - {fileID: 1255614667}
-  - {fileID: 540731660}
