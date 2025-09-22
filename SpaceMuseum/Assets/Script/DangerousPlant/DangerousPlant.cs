@@ -3,7 +3,7 @@ using UnityEngine;
 [DisallowMultipleComponent]
 [RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(Rigidbody))] // Kinematic 권장
-public abstract class DangerousPlant : MonoBehaviour
+public abstract class DangerousPlant : MonoBehaviour, IEnemyTarget
 {
     [Header("공통 설정")]
     public float attackCooldown = 3f;
@@ -14,7 +14,7 @@ public abstract class DangerousPlant : MonoBehaviour
     [SerializeField] protected PlayerHealth ph; // 필요 시 직접 할당 가능
 
     protected bool isPlayerInRange = false;
-
+    public int hp;
     private float nextAttackTime = 0f;
     private int playerOverlapCount = 0;        // 다중 콜라이더 대응
     private int playerLayerMaskValue;          // 미세 최적화
@@ -28,8 +28,16 @@ public abstract class DangerousPlant : MonoBehaviour
         rb.isKinematic = true; // 트리거 충돌만 받을 것
 
         playerLayerMaskValue = playerLayer.value;
+        hp = 100;
     }
-
+    public void OnDamagedFromDrone(int damage)
+    {
+        hp -= damage;
+        if(hp < 0)
+        {
+            Die();
+        }
+    }
     protected virtual void Start()
     {
         pc = PlayerController.Instance;
@@ -71,7 +79,12 @@ public abstract class DangerousPlant : MonoBehaviour
             nextAttackTime = Time.time + attackCooldown;
         }
     }
-
+    protected void Die()
+    {
+        Debug.Log($"{gameObject.name} 죽음!");
+        // 이펙트, 점수 추가, 오브젝트 비활성화 등 원하는 처리
+        gameObject.SetActive(false);
+    }
     private void OnTriggerEnter(Collider other)
     {
         // 레이어 확인
