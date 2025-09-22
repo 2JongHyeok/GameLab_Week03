@@ -18,18 +18,6 @@ public class OxygenNetworkManager : MonoBehaviour
         else Instance = this;
     }
 
-    private void Start()
-    {
-        // 인스펙터에서 oxygenSources를 설정하는 것을 권장
-        if (oxygenSources.Count == 0)
-            //Debug.LogWarning("oxygenSources가 비어 있습니다. 인스펙터에서 설정하세요.");
-    }
-
-    /// <summary>
-    /// 델타 적용 방식의 네트워크 갱신:
-    /// 1) 도달 가능 집합 계산
-    /// 2) 상태 변화가 필요한 테더만 IsOxygenated 변경(setter 내부에서 시각 갱신)
-    /// </summary>
     public void UpdateOxygenNetwork()
     {
         if (Tether.AllTethers.Count == 0) return;

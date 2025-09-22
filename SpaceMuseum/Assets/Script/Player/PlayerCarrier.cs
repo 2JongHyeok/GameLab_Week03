@@ -26,6 +26,8 @@ public class PlayerCarrier : MonoBehaviour
     private InGameManager igm;
     private MyUIManager uim;
 
+    private bool hasDroppedOnDeath = false; // 죽을 때 이미 드롭했는지 체크
+
     void Start()
     {
         igm = InGameManager.Instance;
@@ -43,8 +45,46 @@ public class PlayerCarrier : MonoBehaviour
         {
             DropLastMineral();
         }
-    }
 
+        if (igm.isDead && !hasDroppedOnDeath)
+        {
+            DropAllMineralsOnDeath();
+            hasDroppedOnDeath = true;
+        }
+    }
+    private void DropAllMineralsOnDeath()
+    {
+        Debug.Log("불리니?");
+        if (carriedMinerals.Count == 0) return;
+
+        foreach (var mineral in carriedMinerals)
+        {
+            // 부모-자식 관계 해제
+            mineral.transform.SetParent(null);
+            mineral.transform.position = transform.position + Vector3.up * 0.5f; // 플레이어 위치 살짝 위
+
+            Rigidbody rb = mineral.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.isKinematic = false;
+                mineral.GetComponent<Collider>().isTrigger = false;
+
+                // 죽을 때는 흩어지게 툭 떨어뜨리기 (랜덤 방향)
+                Vector3 randomDir = (Random.insideUnitSphere + Vector3.up * 0.5f).normalized;
+                rb.AddForce(randomDir * throwForce, ForceMode.Impulse);
+            }
+        }
+
+        // 무게 초기화
+        igm.currentWeight = 0;
+        UpdateWeightUI();
+        // 리스트 비우기
+        carriedMinerals.Clear();
+    }
+    public void ResetDeathFlag()
+    {
+        hasDroppedOnDeath = false;
+    }
     public void AddMineral(Mineral mineral)
     {
         carriedMinerals.Add(mineral);

@@ -334,7 +334,7 @@ public class MyUIManager : MonoBehaviour
             playerController.SetControllable(true);
 
         igm.isDead = false;
-
+        PlayerController.Instance.GetComponent<PlayerCarrier>().ResetDeathFlag();
         // 4. È­¸é ¹à°Ô
         if (screenFader != null)
             yield return StartCoroutine(screenFader.FadeIn());
