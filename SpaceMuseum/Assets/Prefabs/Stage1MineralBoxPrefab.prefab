@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3221155785501871837}
   - component: {fileID: 7056342841856469241}
   - component: {fileID: 322259196309138748}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,9 +122,9 @@ GameObject:
   - component: {fileID: 4136051557245108385}
   - component: {fileID: 1655346654164706057}
   - component: {fileID: 3742275874264753457}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stage1MineralBoxPrefab
-  m_TagString: Untagged
+  m_TagString: Mineral
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,6 +239,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7abc557efa61ef040ad6ca0e52b15e89, type: 2}
   - {fileID: 11400000, guid: eaab50434b1546847b3e3d7accd77ddf, type: 2}
   interactionPromptPrefab: {fileID: 8156515364305414842, guid: 6cb0581ce7010244c9ae3d6b5fa65d03, type: 3}
+  stageIndex: 0
+  parentTile: {fileID: 0}
 --- !u!65 &3742275874264753457
 BoxCollider:
   m_ObjectHideFlags: 0
