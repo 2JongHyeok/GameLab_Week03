@@ -24,7 +24,6 @@ public class Drone : MonoBehaviour
         {
             Instance = this;
         }
-        parentDrone.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -72,7 +71,7 @@ public class Drone : MonoBehaviour
 
         RaycastHit hit;
         float maxDist = dist + 0.5f;
-        if (Physics.Raycast(start, dir, out hit, maxDist, enemyMask, QueryTriggerInteraction.Ignore))
+        if (Physics.Raycast(start, dir, out hit, maxDist, enemyMask, QueryTriggerInteraction.Collide))
         {
             dist = hit.distance;
 
