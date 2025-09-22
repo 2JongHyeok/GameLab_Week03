@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 650769}
   - component: {fileID: 650768}
   - component: {fileID: 650767}
+  - component: {fileID: 650770}
   m_Layer: 6
   m_Name: GroundTile1-1
   m_TagString: Ground
@@ -227,6 +228,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650765}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &650770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
 --- !u!1 &7294034
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +315,7 @@ GameObject:
   - component: {fileID: 16595731}
   - component: {fileID: 16595730}
   - component: {fileID: 16595729}
+  - component: {fileID: 16595732}
   m_Layer: 6
   m_Name: GroundTile3-18
   m_TagString: Ground
@@ -397,6 +412,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 16595727}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &16595732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16595727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &17242638
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +722,7 @@ GameObject:
   - component: {fileID: 74652403}
   - component: {fileID: 74652402}
   - component: {fileID: 74652401}
+  - component: {fileID: 74652404}
   m_Layer: 6
   m_Name: GroundTile2-1
   m_TagString: Ground
@@ -790,120 +819,78 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74652399}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &76493891
-PrefabInstance:
+--- !u!114 &74652404
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.1809692
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10.917446
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (19)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
---- !u!1001 &109664362
-PrefabInstance:
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74652399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
+--- !u!1 &97028603
+GameObject:
   m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 97028604}
+  - component: {fileID: 97028605}
+  m_Layer: 0
+  m_Name: MineralSpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &97028604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97028603}
   serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.54478073
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 25.06324
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (17)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1031490522}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &97028605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97028603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dfdc82e83fe345449aaa25d6095d815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mineralBoxPrefab: {fileID: 0}
+  minSpawnPerStage: 10
+  maxSpawnPerStage: 15
+  minDistanceBetweenBoxes: 20
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  stageRadii:
+  - 0
+  - 300
+  - 600
+  - 900
 --- !u!1 &123811212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,63 +993,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1001 &127916479
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (7)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
 --- !u!1 &150554631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,6 +1191,7 @@ GameObject:
   - component: {fileID: 190676412}
   - component: {fileID: 190676411}
   - component: {fileID: 190676410}
+  - component: {fileID: 190676413}
   m_Layer: 6
   m_Name: GroundTile3-4
   m_TagString: Ground
@@ -1357,6 +1288,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190676408}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &190676413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190676408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &224428642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,6 +1313,7 @@ GameObject:
   - component: {fileID: 224428646}
   - component: {fileID: 224428645}
   - component: {fileID: 224428644}
+  - component: {fileID: 224428647}
   m_Layer: 6
   m_Name: GroundTile1-6
   m_TagString: Ground
@@ -1465,6 +1410,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224428642}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &224428647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224428642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
 --- !u!1 &236380692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,6 +1435,7 @@ GameObject:
   - component: {fileID: 236380696}
   - component: {fileID: 236380695}
   - component: {fileID: 236380694}
+  - component: {fileID: 236380697}
   m_Layer: 6
   m_Name: GroundTile3-16
   m_TagString: Ground
@@ -1573,6 +1532,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236380692}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &236380697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236380692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &275337452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1585,6 +1557,7 @@ GameObject:
   - component: {fileID: 275337456}
   - component: {fileID: 275337455}
   - component: {fileID: 275337454}
+  - component: {fileID: 275337457}
   m_Layer: 6
   m_Name: GroundTile3-19
   m_TagString: Ground
@@ -1681,6 +1654,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275337452}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &275337457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275337452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &295075014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1693,6 +1679,7 @@ GameObject:
   - component: {fileID: 295075018}
   - component: {fileID: 295075017}
   - component: {fileID: 295075016}
+  - component: {fileID: 295075019}
   m_Layer: 6
   m_Name: GroundTile2-16
   m_TagString: Ground
@@ -1789,6 +1776,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295075014}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &295075019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295075014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1 &299272727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,6 +1801,7 @@ GameObject:
   - component: {fileID: 299272731}
   - component: {fileID: 299272730}
   - component: {fileID: 299272729}
+  - component: {fileID: 299272732}
   m_Layer: 6
   m_Name: GroundTile2-6
   m_TagString: Ground
@@ -1897,63 +1898,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299272727}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &301601737
-PrefabInstance:
+--- !u!114 &299272732
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.834568
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 18.781397
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (8)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299272727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1 &304803318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,6 +1923,7 @@ GameObject:
   - component: {fileID: 304803322}
   - component: {fileID: 304803321}
   - component: {fileID: 304803320}
+  - component: {fileID: 304803323}
   m_Layer: 6
   m_Name: GroundTile3-11
   m_TagString: Ground
@@ -2062,6 +2020,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304803318}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &304803323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304803318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,7 +2472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
       propertyPath: m_Name
-      value: MineralBoxPrefab
+      value: Stage1MineralBoxPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2784,6 +2755,7 @@ GameObject:
   - component: {fileID: 424307103}
   - component: {fileID: 424307102}
   - component: {fileID: 424307101}
+  - component: {fileID: 424307104}
   m_Layer: 6
   m_Name: GroundTile1-5
   m_TagString: Ground
@@ -2880,6 +2852,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424307099}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &424307104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424307099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
 --- !u!114 &458451248 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2103981304131361521, guid: 09ade435346a0674b9dc328129448972, type: 3}
@@ -2891,63 +2876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &459554628
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (5)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
 --- !u!1 &462763465
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,6 +2990,7 @@ GameObject:
   - component: {fileID: 515230493}
   - component: {fileID: 515230492}
   - component: {fileID: 515230491}
+  - component: {fileID: 515230494}
   m_Layer: 6
   m_Name: GroundTile3-8
   m_TagString: Ground
@@ -3158,120 +3087,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515230489}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &530998637
-PrefabInstance:
+--- !u!114 &515230494
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13.2034445
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 22.681332
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (15)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
---- !u!1001 &552310101
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.989105
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 19.006334
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (18)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515230489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &562486977
 GameObject:
   m_ObjectHideFlags: 0
@@ -3861,6 +3689,7 @@ GameObject:
   - component: {fileID: 592515552}
   - component: {fileID: 592515551}
   - component: {fileID: 592515550}
+  - component: {fileID: 592515553}
   m_Layer: 6
   m_Name: GroundTile1-8
   m_TagString: Ground
@@ -3957,6 +3786,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592515548}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &592515553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592515548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
 --- !u!1 &594693237
 GameObject:
   m_ObjectHideFlags: 0
@@ -4001,6 +3843,7 @@ GameObject:
   - component: {fileID: 677879100}
   - component: {fileID: 677879099}
   - component: {fileID: 677879098}
+  - component: {fileID: 677879101}
   m_Layer: 6
   m_Name: GroundTile2-7
   m_TagString: Ground
@@ -4097,6 +3940,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677879096}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &677879101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677879096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1 &682815980
 GameObject:
   m_ObjectHideFlags: 0
@@ -4109,6 +3965,7 @@ GameObject:
   - component: {fileID: 682815984}
   - component: {fileID: 682815983}
   - component: {fileID: 682815982}
+  - component: {fileID: 682815985}
   m_Layer: 6
   m_Name: GroundTile3-6
   m_TagString: Ground
@@ -4205,63 +4062,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682815980}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &687608412
-PrefabInstance:
+--- !u!114 &682815985
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (6)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682815980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1001 &691925003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4521,63 +4334,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714235053}
   m_CullTransparentMesh: 1
---- !u!1001 &751945025
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.099657
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.99999905
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 18.437592
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (9)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
 --- !u!1 &782098884
 GameObject:
   m_ObjectHideFlags: 0
@@ -4640,63 +4396,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!1001 &798835952
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 18.66174
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 12.632305
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (13)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
 --- !u!1 &810267685
 GameObject:
   m_ObjectHideFlags: 0
@@ -4815,6 +4514,7 @@ GameObject:
   - component: {fileID: 842945699}
   - component: {fileID: 842945698}
   - component: {fileID: 842945697}
+  - component: {fileID: 842945700}
   m_Layer: 6
   m_Name: GroundTile1-4
   m_TagString: Ground
@@ -4911,6 +4611,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842945695}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &842945700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842945695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
 --- !u!1 &868205364
 GameObject:
   m_ObjectHideFlags: 0
@@ -4986,6 +4699,7 @@ GameObject:
   - component: {fileID: 878767312}
   - component: {fileID: 878767311}
   - component: {fileID: 878767310}
+  - component: {fileID: 878767313}
   m_Layer: 6
   m_Name: GroundTile2-15
   m_TagString: Ground
@@ -5082,6 +4796,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878767308}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &878767313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878767308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1 &890526815
 GameObject:
   m_ObjectHideFlags: 0
@@ -5139,63 +4866,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c256ebf988d76e54b9d1786b975e7415, type: 2}
   collectionSlotPrefab: {fileID: 5210163021520632298, guid: ab2768e8ce7a9164bbe8f1de3d946419, type: 3}
   slotParent: {fileID: 7294035}
---- !u!1001 &898151589
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -12
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
 --- !u!1 &904526267
 GameObject:
   m_ObjectHideFlags: 0
@@ -5310,6 +4980,7 @@ GameObject:
   - component: {fileID: 938050126}
   - component: {fileID: 938050125}
   - component: {fileID: 938050124}
+  - component: {fileID: 938050127}
   m_Layer: 6
   m_Name: GroundTile2-9
   m_TagString: Ground
@@ -5406,6 +5077,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938050122}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &938050127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938050122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!114 &950681341 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1747005141706775003, guid: 09ade435346a0674b9dc328129448972, type: 3}
@@ -5542,6 +5226,7 @@ GameObject:
   - component: {fileID: 989889734}
   - component: {fileID: 989889733}
   - component: {fileID: 989889732}
+  - component: {fileID: 989889735}
   m_Layer: 6
   m_Name: GroundTile3-5
   m_TagString: Ground
@@ -5638,6 +5323,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989889730}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &989889735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989889730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &1030635970
 GameObject:
   m_ObjectHideFlags: 0
@@ -5650,6 +5348,7 @@ GameObject:
   - component: {fileID: 1030635974}
   - component: {fileID: 1030635973}
   - component: {fileID: 1030635972}
+  - component: {fileID: 1030635975}
   m_Layer: 6
   m_Name: GroundTile3-14
   m_TagString: Ground
@@ -5746,6 +5445,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030635970}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1030635975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030635970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &1031490521
 GameObject:
   m_ObjectHideFlags: 0
@@ -5778,6 +5490,7 @@ Transform:
   - {fileID: 24069542}
   - {fileID: 580326351}
   - {fileID: 1907987597}
+  - {fileID: 97028604}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1061237483
@@ -5830,6 +5543,7 @@ GameObject:
   - component: {fileID: 1063899967}
   - component: {fileID: 1063899966}
   - component: {fileID: 1063899965}
+  - component: {fileID: 1063899968}
   m_Layer: 6
   m_Name: GroundTile1-7
   m_TagString: Ground
@@ -5926,6 +5640,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063899963}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1063899968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063899963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
 --- !u!1 &1079232575
 GameObject:
   m_ObjectHideFlags: 0
@@ -5978,6 +5705,7 @@ GameObject:
   - component: {fileID: 1091934764}
   - component: {fileID: 1091934763}
   - component: {fileID: 1091934762}
+  - component: {fileID: 1091934765}
   m_Layer: 6
   m_Name: GroundTile3-23
   m_TagString: Ground
@@ -6074,6 +5802,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091934760}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1091934765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091934760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &1100782057
 GameObject:
   m_ObjectHideFlags: 0
@@ -6086,6 +5827,7 @@ GameObject:
   - component: {fileID: 1100782061}
   - component: {fileID: 1100782060}
   - component: {fileID: 1100782059}
+  - component: {fileID: 1100782062}
   m_Layer: 6
   m_Name: GroundTile3-2
   m_TagString: Ground
@@ -6182,6 +5924,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100782057}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1100782062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100782057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &1128245736
 GameObject:
   m_ObjectHideFlags: 0
@@ -6194,6 +5949,7 @@ GameObject:
   - component: {fileID: 1128245740}
   - component: {fileID: 1128245739}
   - component: {fileID: 1128245738}
+  - component: {fileID: 1128245741}
   m_Layer: 6
   m_Name: GroundTile1-3
   m_TagString: Ground
@@ -6290,6 +6046,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128245736}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1128245741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128245736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
 --- !u!1 &1160190745
 GameObject:
   m_ObjectHideFlags: 0
@@ -6435,6 +6204,7 @@ GameObject:
   - component: {fileID: 1168226382}
   - component: {fileID: 1168226381}
   - component: {fileID: 1168226380}
+  - component: {fileID: 1168226383}
   m_Layer: 6
   m_Name: GroundTile2-11
   m_TagString: Ground
@@ -6531,6 +6301,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168226378}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1168226383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168226378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1 &1169335509
 GameObject:
   m_ObjectHideFlags: 0
@@ -6581,7 +6364,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -6664,6 +6447,7 @@ GameObject:
   - component: {fileID: 1180322965}
   - component: {fileID: 1180322964}
   - component: {fileID: 1180322963}
+  - component: {fileID: 1180322966}
   m_Layer: 6
   m_Name: GroundTile1-9
   m_TagString: Ground
@@ -6760,63 +6544,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180322961}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1191878740
-PrefabInstance:
+--- !u!114 &1180322966
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 13.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180322961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
 --- !u!114 &1208332978 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5836543903910122829, guid: 09ade435346a0674b9dc328129448972, type: 3}
@@ -6984,6 +6724,7 @@ GameObject:
   - component: {fileID: 1254445187}
   - component: {fileID: 1254445186}
   - component: {fileID: 1254445185}
+  - component: {fileID: 1254445188}
   m_Layer: 6
   m_Name: GroundTile1-2
   m_TagString: Ground
@@ -7080,6 +6821,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254445183}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1254445188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254445183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
 --- !u!1 &1255614666
 GameObject:
   m_ObjectHideFlags: 0
@@ -7124,63 +6878,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1277419199
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (4)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
 --- !u!114 &1293889241 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 464665476452582310, guid: 09ade435346a0674b9dc328129448972, type: 3}
@@ -7203,63 +6900,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1381622376
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.7509394
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 12.364292
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (11)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
 --- !u!1 &1388725178
 GameObject:
   m_ObjectHideFlags: 0
@@ -7408,6 +7048,7 @@ GameObject:
   - component: {fileID: 1394430653}
   - component: {fileID: 1394430652}
   - component: {fileID: 1394430651}
+  - component: {fileID: 1394430654}
   m_Layer: 6
   m_Name: GroundTile2-10
   m_TagString: Ground
@@ -7504,6 +7145,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394430649}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1394430654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394430649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1 &1411529994
 GameObject:
   m_ObjectHideFlags: 0
@@ -7516,6 +7170,7 @@ GameObject:
   - component: {fileID: 1411529998}
   - component: {fileID: 1411529997}
   - component: {fileID: 1411529996}
+  - component: {fileID: 1411529999}
   m_Layer: 6
   m_Name: GroundTile3-15
   m_TagString: Ground
@@ -7612,6 +7267,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1411529994}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1411529999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411529994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &1422265034
 GameObject:
   m_ObjectHideFlags: 0
@@ -7624,6 +7292,7 @@ GameObject:
   - component: {fileID: 1422265038}
   - component: {fileID: 1422265037}
   - component: {fileID: 1422265036}
+  - component: {fileID: 1422265039}
   m_Layer: 6
   m_Name: GroundTile2-13
   m_TagString: Ground
@@ -7720,6 +7389,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422265034}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1422265039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422265034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1 &1460696373
 GameObject:
   m_ObjectHideFlags: 0
@@ -7865,6 +7547,7 @@ GameObject:
   - component: {fileID: 1462059129}
   - component: {fileID: 1462059128}
   - component: {fileID: 1462059127}
+  - component: {fileID: 1462059130}
   m_Layer: 6
   m_Name: GroundTile3-12
   m_TagString: Ground
@@ -7961,6 +7644,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1462059125}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1462059130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462059125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &1464506139
 GameObject:
   m_ObjectHideFlags: 0
@@ -7973,6 +7669,7 @@ GameObject:
   - component: {fileID: 1464506143}
   - component: {fileID: 1464506142}
   - component: {fileID: 1464506141}
+  - component: {fileID: 1464506144}
   m_Layer: 6
   m_Name: GroundTile3-24
   m_TagString: Ground
@@ -8069,6 +7766,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464506139}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1464506144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464506139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &1481764868
 GameObject:
   m_ObjectHideFlags: 0
@@ -8200,6 +7910,7 @@ GameObject:
   - component: {fileID: 1530253416}
   - component: {fileID: 1530253415}
   - component: {fileID: 1530253414}
+  - component: {fileID: 1530253417}
   m_Layer: 6
   m_Name: GroundTile3-7
   m_TagString: Ground
@@ -8296,6 +8007,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1530253412}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1530253417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530253412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &1534838467
 GameObject:
   m_ObjectHideFlags: 0
@@ -8416,6 +8140,7 @@ GameObject:
   - component: {fileID: 1542964017}
   - component: {fileID: 1542964016}
   - component: {fileID: 1542964015}
+  - component: {fileID: 1542964018}
   m_Layer: 6
   m_Name: GroundTile2-2
   m_TagString: Ground
@@ -8512,6 +8237,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542964013}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1542964018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542964013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1 &1553217405
 GameObject:
   m_ObjectHideFlags: 0
@@ -8594,6 +8332,7 @@ GameObject:
   - component: {fileID: 1569050148}
   - component: {fileID: 1569050147}
   - component: {fileID: 1569050146}
+  - component: {fileID: 1569050149}
   m_Layer: 6
   m_Name: GroundTile3-10
   m_TagString: Ground
@@ -8690,6 +8429,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569050144}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1569050149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569050144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &1615600275
 GameObject:
   m_ObjectHideFlags: 0
@@ -8702,6 +8454,7 @@ GameObject:
   - component: {fileID: 1615600279}
   - component: {fileID: 1615600278}
   - component: {fileID: 1615600277}
+  - component: {fileID: 1615600280}
   m_Layer: 6
   m_Name: GroundTile2-8
   m_TagString: Ground
@@ -8798,6 +8551,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615600275}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1615600280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615600275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1 &1629984591
 GameObject:
   m_ObjectHideFlags: 0
@@ -8942,120 +8708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1660315740
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.9137955
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.0000019
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 24.508972
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (16)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
---- !u!1001 &1662720753
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 17.205936
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 19.430603
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (14)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
 --- !u!1 &1672392847
 GameObject:
   m_ObjectHideFlags: 0
@@ -9068,6 +8720,7 @@ GameObject:
   - component: {fileID: 1672392851}
   - component: {fileID: 1672392850}
   - component: {fileID: 1672392849}
+  - component: {fileID: 1672392852}
   m_Layer: 6
   m_Name: GroundTile2-14
   m_TagString: Ground
@@ -9164,6 +8817,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672392847}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1672392852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672392847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1 &1676544505
 GameObject:
   m_ObjectHideFlags: 0
@@ -9176,6 +8842,7 @@ GameObject:
   - component: {fileID: 1676544509}
   - component: {fileID: 1676544508}
   - component: {fileID: 1676544507}
+  - component: {fileID: 1676544510}
   m_Layer: 6
   m_Name: GroundTile3-9
   m_TagString: Ground
@@ -9272,6 +8939,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676544505}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1676544510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676544505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &1683716207
 GameObject:
   m_ObjectHideFlags: 0
@@ -9962,63 +9642,6 @@ Transform:
   - {fileID: 123811213}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1773053504
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 12.880722
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 17.670626
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (10)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
 --- !u!1 &1783539454
 GameObject:
   m_ObjectHideFlags: 0
@@ -10031,6 +9654,7 @@ GameObject:
   - component: {fileID: 1783539458}
   - component: {fileID: 1783539457}
   - component: {fileID: 1783539456}
+  - component: {fileID: 1783539459}
   m_Layer: 6
   m_Name: GroundTile2-4
   m_TagString: Ground
@@ -10127,6 +9751,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783539454}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1783539459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783539454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1 &1792450997
 GameObject:
   m_ObjectHideFlags: 0
@@ -10139,6 +9776,7 @@ GameObject:
   - component: {fileID: 1792451001}
   - component: {fileID: 1792451000}
   - component: {fileID: 1792450999}
+  - component: {fileID: 1792451002}
   m_Layer: 6
   m_Name: GroundTile2-5
   m_TagString: Ground
@@ -10235,6 +9873,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792450997}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1792451002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792450997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1 &1817980682
 GameObject:
   m_ObjectHideFlags: 0
@@ -10385,6 +10036,7 @@ GameObject:
   - component: {fileID: 1855592948}
   - component: {fileID: 1855592947}
   - component: {fileID: 1855592946}
+  - component: {fileID: 1855592949}
   m_Layer: 6
   m_Name: GroundTile3-13
   m_TagString: Ground
@@ -10481,6 +10133,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855592944}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1855592949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855592944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &1898205303
 GameObject:
   m_ObjectHideFlags: 0
@@ -10493,6 +10158,7 @@ GameObject:
   - component: {fileID: 1898205307}
   - component: {fileID: 1898205306}
   - component: {fileID: 1898205305}
+  - component: {fileID: 1898205308}
   m_Layer: 6
   m_Name: GroundTile3-17
   m_TagString: Ground
@@ -10589,6 +10255,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898205303}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1898205308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898205303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &1907034541
 GameObject:
   m_ObjectHideFlags: 0
@@ -10704,7 +10383,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -10800,6 +10479,7 @@ GameObject:
   - component: {fileID: 1940677911}
   - component: {fileID: 1940677910}
   - component: {fileID: 1940677909}
+  - component: {fileID: 1940677912}
   m_Layer: 6
   m_Name: GroundTile3-22
   m_TagString: Ground
@@ -10896,6 +10576,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940677907}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1940677912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940677907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &1989426392
 GameObject:
   m_ObjectHideFlags: 0
@@ -10908,6 +10601,7 @@ GameObject:
   - component: {fileID: 1989426396}
   - component: {fileID: 1989426395}
   - component: {fileID: 1989426394}
+  - component: {fileID: 1989426397}
   m_Layer: 6
   m_Name: GroundTile2-12
   m_TagString: Ground
@@ -11004,6 +10698,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989426392}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1989426397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989426392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1 &2011171094
 GameObject:
   m_ObjectHideFlags: 0
@@ -11510,6 +11217,7 @@ GameObject:
   - component: {fileID: 2101363130}
   - component: {fileID: 2101363129}
   - component: {fileID: 2101363128}
+  - component: {fileID: 2101363131}
   m_Layer: 6
   m_Name: GroundTile3-20
   m_TagString: Ground
@@ -11606,63 +11314,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2101363126}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &2108567226
-PrefabInstance:
+--- !u!114 &2101363131
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101363126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &2114265996
 GameObject:
   m_ObjectHideFlags: 0
@@ -11675,6 +11339,7 @@ GameObject:
   - component: {fileID: 2114266000}
   - component: {fileID: 2114265999}
   - component: {fileID: 2114265998}
+  - component: {fileID: 2114266001}
   m_Layer: 6
   m_Name: GroundTile3-1
   m_TagString: Ground
@@ -11771,6 +11436,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114265996}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2114266001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2114265996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &2124298823
 GameObject:
   m_ObjectHideFlags: 0
@@ -11783,6 +11461,7 @@ GameObject:
   - component: {fileID: 2124298827}
   - component: {fileID: 2124298826}
   - component: {fileID: 2124298825}
+  - component: {fileID: 2124298828}
   m_Layer: 6
   m_Name: GroundTile3-3
   m_TagString: Ground
@@ -11879,6 +11558,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124298823}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2124298828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124298823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &2125591348
 GameObject:
   m_ObjectHideFlags: 0
@@ -11891,6 +11583,7 @@ GameObject:
   - component: {fileID: 2125591352}
   - component: {fileID: 2125591351}
   - component: {fileID: 2125591350}
+  - component: {fileID: 2125591353}
   m_Layer: 6
   m_Name: GroundTile3-21
   m_TagString: Ground
@@ -11987,6 +11680,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125591348}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2125591353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125591348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 3
 --- !u!1 &2127849682
 GameObject:
   m_ObjectHideFlags: 0
@@ -11999,6 +11705,7 @@ GameObject:
   - component: {fileID: 2127849686}
   - component: {fileID: 2127849685}
   - component: {fileID: 2127849684}
+  - component: {fileID: 2127849687}
   m_Layer: 6
   m_Name: GroundTile2-3
   m_TagString: Ground
@@ -12095,63 +11802,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127849682}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &2130214359
-PrefabInstance:
+--- !u!114 &2127849687
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 10.629011
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 11.116081
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 900268459291661825, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5280381298887019207, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
-      propertyPath: m_Name
-      value: MineralBoxPrefab (12)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f3f61d2d4ff43e489f3645feb5c9dea, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127849682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1975015a0c1edc4bb6c2ce72ca257b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -12169,22 +11832,3 @@ SceneRoots:
   - {fileID: 1736519715}
   - {fileID: 1255614667}
   - {fileID: 353261612}
-  - {fileID: 1191878740}
-  - {fileID: 2108567226}
-  - {fileID: 898151589}
-  - {fileID: 1277419199}
-  - {fileID: 459554628}
-  - {fileID: 687608412}
-  - {fileID: 127916479}
-  - {fileID: 301601737}
-  - {fileID: 751945025}
-  - {fileID: 1773053504}
-  - {fileID: 1381622376}
-  - {fileID: 2130214359}
-  - {fileID: 798835952}
-  - {fileID: 1662720753}
-  - {fileID: 530998637}
-  - {fileID: 1660315740}
-  - {fileID: 109664362}
-  - {fileID: 552310101}
-  - {fileID: 76493891}

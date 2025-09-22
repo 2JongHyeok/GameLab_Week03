@@ -14,6 +14,9 @@ public class MineralBox : MonoBehaviour, IInteractable
     private Slider interactionSlider; // 월드 UI에 있는 슬라이더
     private bool isOpened = false;    // 박스가 중복 열리지 않도록 방지
 
+    [HideInInspector] public int stageIndex;
+    [HideInInspector] public Tile parentTile;
+
     // OnInteract는 이제 플레이어로부터 진행률을 받아 슬라이더를 업데이트합니다.
     public void OnHoldInteract(float progress)
     {
@@ -43,7 +46,13 @@ public class MineralBox : MonoBehaviour, IInteractable
         {
             Destroy(promptInstance);
         }
-        // TreasureBox 파괴
+
+        if (parentTile != null)
+        {
+            MineralSpawnManager.Instance.RespawnBox(stageIndex, parentTile);
+        }
+
+        // 자신은 제거
         Destroy(gameObject);
     }
 

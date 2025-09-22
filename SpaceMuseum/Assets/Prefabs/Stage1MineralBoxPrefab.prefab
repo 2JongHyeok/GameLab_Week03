@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 1655346654164706057}
   - component: {fileID: 3742275874264753457}
   m_Layer: 0
-  m_Name: MineralBoxPrefab
+  m_Name: Stage1MineralBoxPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -234,11 +234,10 @@ MonoBehaviour:
   mineralPrefab: {fileID: 7823143957302695871, guid: aa3c32266e56d4d4db2412acd2b7a645, type: 3}
   mineralDropTable:
   - {fileID: 11400000, guid: c4252fad1c2aabe498fe164b77cd71b8, type: 2}
-  - {fileID: 11400000, guid: 7abc557efa61ef040ad6ca0e52b15e89, type: 2}
+  - {fileID: 11400000, guid: b0675934c1b0e5f4b8d91e07bc892f57, type: 2}
   - {fileID: 11400000, guid: 2b19a0aa7ecc08d449c4b348bba55ebc, type: 2}
-  - {fileID: 11400000, guid: e782c4bb6db2fbc479dc3b8c53acd8bb, type: 2}
-  - {fileID: 11400000, guid: 200041e9eca7cbb4c8f73a21485d411a, type: 2}
-  - {fileID: 11400000, guid: 5739099264b77704c8d80937c705c52e, type: 2}
+  - {fileID: 11400000, guid: 7abc557efa61ef040ad6ca0e52b15e89, type: 2}
+  - {fileID: 11400000, guid: eaab50434b1546847b3e3d7accd77ddf, type: 2}
   interactionPromptPrefab: {fileID: 8156515364305414842, guid: 6cb0581ce7010244c9ae3d6b5fa65d03, type: 3}
 --- !u!65 &3742275874264753457
 BoxCollider:
