@@ -144,7 +144,7 @@ public class PlayerOxygen : MonoBehaviour
         lr.SetPositions(positions);
     }
 
-    private void UpdateOxygenGauge()
+    public void UpdateOxygenGauge()
     {
         if (!oxygenGaugePivot) return;
         float ratio = Mathf.Clamp01(maxOxygen > 0f ? currentOxygen / maxOxygen : 0f);

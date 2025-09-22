@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI; // TextMeshPro를 사용하기 위해 반드시 추가!
+using UnityEngine.UI;
+using System.Collections; // TextMeshPro를 사용하기 위해 반드시 추가!
 
 public class MyUIManager : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class MyUIManager : MonoBehaviour
     public TextMeshProUGUI upgradeInventoryPriceText;
     public TextMeshProUGUI upgradeInventoryLevelText;
     public TextMeshProUGUI InventoryUIText;
+    public ScreenFader screenFader;
+    public PlayerOxygen oxygenSystem;
+    public PlayerController playerController;
+    public Slider playerHpSlider;
 
     private void Awake()
     {
@@ -272,6 +277,7 @@ public class MyUIManager : MonoBehaviour
         UpdateBytes();
         UpdateShopButtons();
         UpdateWeightUI(gm.currentWeight, gm.maxWeight);
+        UpdateHealthUI();
     }
     public void UpdateTetherCount(int count)
     {
@@ -279,5 +285,54 @@ public class MyUIManager : MonoBehaviour
         {
             tetherCountText.text = $"Tether : {count:D2}";
         }
+    }
+
+    public void DieUI()
+    {
+        StartCoroutine(DieAndRespawnRoutine());
+    }
+
+    private IEnumerator DieAndRespawnRoutine()
+    {
+        InGameManager igm = InGameManager.Instance;
+        // 화면 어둡게
+        if (screenFader != null)
+            yield return StartCoroutine(screenFader.FadeOut());
+
+        // --- 부활 처리 ---
+        Debug.Log("부활 처리 시작");
+
+
+        PlayerController.Instance.PlayerDead();
+
+        // 2. 체력 및 산소 회복
+        igm.currentHealth = igm.maxHealth;
+        UpdateHealthUI();
+        if (oxygenSystem != null)
+        {
+            oxygenSystem.currentOxygen = oxygenSystem.maxOxygen;
+            oxygenSystem.UpdateOxygenGauge();
+        }
+
+        // 3. 컨트롤 복원
+        if (playerController != null)
+            playerController.SetControllable(true);
+
+        igm.isDead = false;
+
+        // 4. 화면 밝게
+        if (screenFader != null)
+            yield return StartCoroutine(screenFader.FadeIn());
+    }
+    public void UpdateHealthUI()
+    {
+        InGameManager igm = InGameManager.Instance;
+        if (playerHpSlider == null || igm == null) return;
+
+        // 슬라이더의 최대/최소값 세팅
+        playerHpSlider.minValue = 0;
+        playerHpSlider.maxValue = igm.maxHealth;
+        // 현재 체력으로 값 갱신
+        playerHpSlider.value = igm.currentHealth;
     }
 }

@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance { get; private set; }
     [Header("Movement")]
-    
     private float rotationSpeed = 5f;
     public float jumpForce = 7f;
     private float originalMoveSpeed;
@@ -25,7 +26,20 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool jumpRequested = false;
     private bool isSprinting = false; // 달리기 상태 변수
+    private bool isAlive = true;
     InGameManager gm;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     void Start()
     {
@@ -88,7 +102,10 @@ public class PlayerController : MonoBehaviour
         // --- [수정] 현재 속도를 걷기/달리기 상태에 따라 결정 ---
         float baseSpeed = isSprinting ? gm.moveSpeed * 1.5f : gm.moveSpeed;
         float currentSpeed = baseSpeed * currentSpeedMultiplier;
-
+        if (!isAlive)
+        {
+            currentSpeed = 0f;
+        }
         // 카메라 기준 이동 방향 계산 (기존과 동일)
         Vector3 camForward = Camera.main.transform.forward;
         Vector3 camRight = Camera.main.transform.right;
@@ -112,5 +129,14 @@ public class PlayerController : MonoBehaviour
             Quaternion newRotation = Quaternion.Slerp(rb.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
             rb.MoveRotation(newRotation);
         }
+    }
+    public void SetControllable(bool _isAlive)
+    {
+        isAlive = _isAlive;
+    }
+
+    public void PlayerDead()
+    {
+          transform.position = new Vector3(10, 1, 0); // fallback 위치
     }
 }

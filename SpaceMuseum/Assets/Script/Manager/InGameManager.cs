@@ -6,9 +6,14 @@ public class InGameManager : MonoBehaviour
     // InGameManager를 어디서든 쉽게 접근할 수 있도록 Singleton 패턴으로 만듭니다.
     public static InGameManager Instance { get; private set; }
 
-    [Header("플레이어 재화")]
+
+
+    [Header("플레이어 데이터")]
     public int bytes = 10000; // 임시로 1000원을 가지고 시작
     public float moveSpeed = 6f;
+    public bool isDead = false;
+    public float maxHealth = 100f;
+    public float currentHealth;
 
     [Header("테더 데이터")]
     public int tetherCount = 10;
@@ -46,6 +51,7 @@ public class InGameManager : MonoBehaviour
     {
         MyUIManager.Instance.UpdateTetherCount(tetherCount);
         MyUIManager.Instance.UpdateBytes();
+        currentHealth = maxHealth;
     }
 
     public void UpdateWeight()
